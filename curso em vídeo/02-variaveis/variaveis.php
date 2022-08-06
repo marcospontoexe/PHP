@@ -15,9 +15,23 @@
         $peso = (int)60;        /* força a variável a ser do tipo int*/
 
         echo "$nome"." tem "."$idade"." anos!</br>";            /* concatenando strings */
-        echo "$nome ganha $salario reais e tem $idade anos!";
+        echo "$nome ganha $salario reais e tem $idade anos!</br>";
 
-    ?>
+        //VARIÁVEIS REFERENCIADAS
+        $n1 = 2;
+        $n1 = &$n2;       // n1 é referencia de n2
+        $n2 = 10;
+
+        echo "n1 vale $n1 </br>";
+        echo "n2 vale $n2 </br>";
+
+        //VARIÁVEIS DE VARIÁVEIS
+        $valor = "string";
+        $$valor = "marcos";       // cria uma variável chamada 'string' que recebe o valor "marcos"
+
+        echo "valor : $valor </br>";
+        echo "string : $string";
+?>
     
 </body>
 </html>
