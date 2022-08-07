@@ -8,16 +8,36 @@
 </head>
 <body>
     <?php
-    $n1 = 5.5;
-    $n2 = 3;
-    $n3 = 3000;
-    
-    echo "A raiz módulo de $n1 é ". abs($n1) . "</br>";
-    echo "A potenciação de $n1 <sup>$n2</sup> é igual a ". pow($n1, $n2) . "</br>";
-    echo "A raiz quadrada de $n1 é ". sqrt($n1) . "</br>";
-    echo "$n1 arredondado é ". round($n1) . "</br>";        /* ceil() arredonda pra cima, e floor()arredonda para baixo */
-    echo "A parte inteira de $n1 é ". intval($n1) . "</br>";
-    echo "O valor em Real de $n3 é R$: ". number_format($n3, 2, ',', '.') . "</br>";    /* number_format($n3, n° decimais, 'centavos', 'milhar') */
+                
+        function soma($n1, $n2){
+            $s = $n1 + $n2;
+            echo "A soma entre $n1 e $n2 é $s";
+
+        }
+     
+        function multiplo($m1, $m2){
+            return $m1 * $m2;
+        }
+
+        soma(5, 2);
+
+        $v1 = 5;
+        $v2 = 3;
+        echo "</br>";
+        echo "A multiplicação entre $v1 e $v2 é: ". multiplo($v1, $v2);
+
+        /*--------------ROTINA COM MULTIPLOS PARÂMETROS------------------*/
+        function total(){   /* parâmetros de entrada indeterminado */
+            $vet = func_get_args();     /* cria um vetor com os parâmetros passados para a função */
+            $tot = func_num_args();     /* recebe a quantidade de parâmetros passados para a função */
+            $s = 0;
+            for($i=0; $i<$tot; $i++){
+                $s +=$vet[$i];
+            }
+            return $s;
+        }
+        echo "</br>";
+        echo "A soma entre 2, 3, 8, 7 é :".total(2, 3, 8, 7). "</br>";
 
     ?>
     
