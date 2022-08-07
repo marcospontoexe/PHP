@@ -39,6 +39,16 @@
         echo "</br>";
         echo "A soma entre 2, 3, 8, 7 é :".total(2, 3, 8, 7). "</br>";
 
+        /*-------------------USANDO FUNÇÃO EXTERNA--------------------- */
+        include "externa.php";     
+        /* 
+        include, caso não seja possível importar o arquivo, o programa continua.
+        require, caso não seja possível importar o arquivo, o programa para.
+        include_once, caso ja tenha sido solicitado a importação, o comando é ignorado.
+        require_once, caso ja tenha sido solicitado a importação, o comando é ignorado.
+         */
+        ola();          /* chama a função "ola()" que esta no arquivo "externa.php" */
+
     ?>
     
 </body>
