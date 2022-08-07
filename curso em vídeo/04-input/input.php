@@ -8,8 +8,8 @@
 </head>
 <body>
     <?php
-        $n1 = $_GET["a"];       /* n1 recebe o valor fornecido na URL (.../input.php?a=5&b=4) */
-        $n2 = $_GET["b"];       /* n2 recebe o valor fornecido na URL (.../input.php?a=5&b=4) */
+        $n1 = $_GET["a"];       /* n1 recebe o valor fornecido na URL*/
+        $n2 = $_GET["b"];       /* n2 recebe o valor fornecido na URL*/
         $soma = $n1 + $n2;
 
         echo "A soma entre $n1 e $n2 é igual a $soma";
