@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variáveis em PHP</title>
+    <title>Usando if else</title>
 </head>
 <body>
     <?php   
         $idade = 68;
 
-        if( $idade < 18){
+        if($idade >= 0 && $idade < 18){
             echo "Menor de idade!";
 
         }
