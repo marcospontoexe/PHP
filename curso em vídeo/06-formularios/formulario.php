@@ -29,7 +29,7 @@
         echo "$n tem $i anos! </br>";
         echo "sexo: $s! </br>";
     ?>
-    <a href="index.html">Voltar</a>
+    <a href="javascript:history.go(-1)" class="botao">Voltar</a>   <!--  ou  <a href="index.html">Voltar</a>  -->
     
 </body>
 </html>
