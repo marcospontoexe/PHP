@@ -12,7 +12,14 @@
     $n2 = 10.25;
     $soma = $n1 + $n2;
 
-    echo "A soma entre $n1 e $n2 é igual a $soma";
+    echo "A soma entre $n1 e $n2 é igual a $soma </br>";
+
+    //OPERADOR TERNÁRIO   ->        expressão ? true : false
+    $maior = $n1 > $n2 ? $n1 : $n2;
+    $menor = $n1 < $n2 ? $n1 : $n2;
+    echo "O maior nº é: $maior </br>";
+    echo "O menor nº é: $menor </br>";
+
 
     ?>
     
