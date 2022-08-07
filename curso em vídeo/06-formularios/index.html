@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fomulário</title>
+</head>
+<body>
+    <form action="formulario.php" method="get" autocomplete="on">
+        <fieldset>
+            <legend>Configurações de CSS</legend>
+            <label for="ifonte">Tamanho da fote:</label>
+            <select name="fonte" id="ifonte">
+                <option value="8pt">8</option>
+                <option value="10pt">10</option>
+                <option value="14pt" selected>14</option>
+                <option value="20pt">20</option>
+                <option value="40pt">40</option>
+            </select>
+            <br>
+            <label for="icor">Cor da fonte:</label>
+            <input type="color" name="cor" id="icor">
+        </fieldset>
+        <fieldset>
+            <legend>Cadastro</legend>
+            <label for="inome">Nome:</label>
+            <input type="text" name="nome" id="inome" required>
+            <br>
+            <label for="idade">Idade:</label>
+            <input type="number" name="idade" id="iidade" required>
+            <br>
+            <label for="isexo">Sexo:</label>
+            <br>
+            <input type="radio" name="sexo" id="masc" value="masculino" checked>
+            <label for="masc">Maculino</label>
+            <br>
+            <input type="radio" name="sexo" id="fem" value="feminino">
+            <label for="fem">Feminino</label>
+            <br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </fieldset>
+    </form>
+    
+</body>
+</html>
