@@ -13,7 +13,9 @@
         $nome = "Marcos";
         $casado = False;
         $peso = (int)60;        /* força a variável a ser do tipo int*/
+        $vetor = array(2, 5, 9, 8);     //cria um vetor
 
+        echo "Vetor posição 0: $vetor[0] </br>";
         echo "$nome"." tem "."$idade"." anos!</br>";            /* concatenando strings */
         echo "$nome ganha $salario reais e tem $idade anos!</br>";
 
