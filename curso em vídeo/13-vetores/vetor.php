@@ -19,6 +19,11 @@
         echo "<br>";
         echo str_repeat("*-", 40) . "<br>"; 
 
+        echo "var_dump(): <br>";
+        var_dump($n);           // mostra p vetor e tb o tipo das variáveis
+        echo "<br>";
+        echo str_repeat("*-", 40) . "<br>"; 
+
         $v = array(1, 2, 3, 4, 10); //cria um vetor
         $v[] = 8;   //cria mais um índice e atribui uma valor
         print_r($v);
