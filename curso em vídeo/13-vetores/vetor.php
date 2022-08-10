@@ -25,14 +25,24 @@
         echo str_repeat("*-", 40) . "<br>"; 
 
         $v = array(1, 2, 3, 4, 10); //cria um vetor
-        $v[] = 8;   //cria mais um índice e atribui uma valor
+        $v[] = 8;   //cria mais um índice no final do vtore atribui uma valor
+        array_push($v, 11); //adiciona o 11 no final do vetor
+        print_r($v);
+        echo "<br>";
+        array_pop($v);    //exclui o ultimo elemento do vetor
+        print_r($v);
+        echo "<br>";
+        array_unshift($v, 20);  //inclui o 20 no inívio do vetor
+        print_r($v);
+        echo "<br>";
+        array_shift($v);    //exclui o primeiro elemento do vetor
         print_r($v);
         echo "<br>";
         echo str_repeat("*-", 40) . "<br>"; 
        
 
         echo "unset(vect)";
-        unset($v[5]);       //exclui o 5º elemento do vetor v
+        unset($v[1]);       //exclui o 2º elemento do vetor v
         print_r($v);
         echo "<br>";
         echo str_repeat("*-", 40) . "<br>";
@@ -60,6 +70,50 @@
         }
         echo "<br>";
         echo str_repeat("*-", 40) . "<br>";
+
+        echo "count(vetor) <br>";
+        echo "O vetor tem ".count($cadast). " elementos! <br>";
+        echo "<br>";
+        echo str_repeat("*-", 40) . "<br>";
+
+        echo "Ordenando vetores <br>";
+        $res = array(5, 8, 9, 4, 88 ,12);
+        echo "vetor original: ";
+        print_r($res);
+        echo "<br>";
+        sort($res);
+        echo "vetor ordenado: ";
+        print_r($res);
+        echo "<br>";
+        echo "<br>";
+        echo str_repeat("*-", 40) . "<br>";
+
+        echo "Ordenando vetores reversamente<br>";
+        $res = array(5, 8, 9, 4, 88 ,12);
+        echo "vetor original: ";
+        print_r($res);
+        echo "<br>";
+        rsort($res);
+        echo "vetor ordenado: ";
+        print_r($res);
+        echo "<br>";
+        echo "<br>";
+        echo str_repeat("*-", 40) . "<br>";
+
+        echo "Ordenando vetores associativos<br>";
+        $res = array(5, 8, 9, 4, 88 ,12);
+        echo "vetor original: ";
+        print_r($res);
+        echo "<br>";
+        asort($res);    //coloca em ordem crescente, e mantém os índices assosciados ao valores (pode usar tb o arsort() para ordem reversa)
+        echo "vetor ordenado: ";
+        print_r($res);
+        echo "<br>";
+        echo "<br>";
+        echo str_repeat("*-", 40) . "<br>";
+
+
+
 
 
     ?>
