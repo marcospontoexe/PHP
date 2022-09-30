@@ -15,7 +15,7 @@
 <h1>Meu primeiro programa em PHP</h1>
 <?php                                   /* super tag, para incluir códigos em PHP*/
 echo "<h2> olá mundo</h2>";         /* 'echo' mostra algo na tela. Também pode ser usado 'print'*/
-print "<p>este é um parágrafo!</p>"
+print "<p>este é um parágrafo!</p>";
 ?>
 
 </body>

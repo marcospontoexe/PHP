@@ -8,6 +8,10 @@
 </head>
 <body>
     <?php
+    /*
+    Para atribuir valores às variáveis pela URL, tem que colocar interrogação após o ".php"
+    exemplo: endereço.com/diretorio%qualquer/caminho/..../programa.php?a=2&b=5
+    */
         $n1 = $_GET["a"];       /* n1 recebe o valor fornecido na URL*/
         $n2 = $_GET["b"];       /* n2 recebe o valor fornecido na URL*/
         $soma = $n1 + $n2;
