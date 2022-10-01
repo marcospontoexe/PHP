@@ -32,7 +32,7 @@
         array_pop($v);    //exclui o ultimo elemento do vetor
         print_r($v);
         echo "<br>";
-        array_unshift($v, 20);  //inclui o 20 no inívio do vetor
+        array_unshift($v, 20);  //inclui o 20 no início do vetor
         print_r($v);
         echo "<br>";
         array_shift($v);    //exclui o primeiro elemento do vetor

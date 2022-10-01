@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <?php
-        $t = isset($_GET["fonte"]) ? $_GET["fonte"] : "18pt";
+        $t = isset($_GET["fonte"]) ? $_GET["fonte"] : "18pt";   // usando operador ternário para evitar erro 
         $c = isset($_GET["cor"]) ? $_GET["cor"] : "#0000";
     ?>
     <meta charset="UTF-8">
@@ -11,22 +11,24 @@
     <title>Cadastro</title>
     <style>
         body{
-            font-size: <?php echo "$t"; ?>;
-            color: <?php echo "$c"; ?>;
+            font-size: <?php echo $t; ?>;
+            color: <?php echo $c; ?>;
 
         }
         
     </style>
 </head>
 <body>
+   
     <?php
         $n = isset($_GET["nome"]) ? ($_GET["nome"]) : "Valor não informado!";     /* recebe o valor enviado pelo método 'GET'
         isset() retorna true caso o valor tenha sido configurado
         */
-        $i = isset($_GET["idade"]) ? ($_GET["idade"]) : "Valor não informado!";        // recebe o valor enviado pelo método 'GET'
+        $nasc = isset($_GET["nasce"]) ? ($_GET["nasce"]) : "Valor não informado!";        // recebe o valor enviado pelo método 'GET'
         $s = isset($_GET["sexo"]) ? $_GET["sexo"] : "Valor não informado!";
+        $idade = date("Y") - $nasc;
 
-        echo "$n tem $i anos! </br>";
+        echo "$n tem $idade anos! </br>";
         echo "sexo: $s! </br>";
     ?>
     <a href="javascript:history.go(-1)">Voltar</a>   <!--  ou  <a href="index.html">Voltar</a>  -->

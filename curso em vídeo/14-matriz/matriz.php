@@ -8,6 +8,7 @@
 </head>
 <body>  
     <?php
+        
         $mat = array(       //criando uma matriz
             array(6, 4),
             array(9, 8),
