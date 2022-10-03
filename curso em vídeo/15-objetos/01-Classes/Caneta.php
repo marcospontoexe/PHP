@@ -8,6 +8,15 @@ class Caneta {
     private $carga;
     private $tampada;    
     
+    //construtor
+    public function Caneta($cor, $ponta) {
+        $this->cor = $cor;
+        $this->ponta = $ponta;
+        $this->carga = 100;
+        $this->tampar();
+    }
+
+    
     //métodos
     public function rabiscar(){
         echo '<p>Estou rabiscando...</p>';
@@ -18,6 +27,8 @@ class Caneta {
     public function destampar(){
         $this->tampada = false;
     }
+    
+    //métodos acessores
     public function getModelo() {
         return $this->modelo;
     }
