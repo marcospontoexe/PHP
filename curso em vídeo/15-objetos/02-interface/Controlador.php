@@ -1,14 +1,16 @@
 <?php
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/PHPInterface.php to edit this template
- */
-
-/**
- *
- * @author marcos
- */
+//código da interface
+  
 interface Controlador {
-    //put your code here
+    //métodos abstratos
+    public abstract function ligar();
+    public abstract function desligar();
+    public abstract function abrirMenu();
+    public abstract function fecharMenu();
+    public abstract function maisVolume();
+    public abstract function menosVolume();
+    public abstract function ligarMudo();
+    public abstract function desligarMudo();
+    public abstract function play();
+    public abstract function pause();
 }
