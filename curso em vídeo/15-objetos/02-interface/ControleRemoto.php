@@ -13,22 +13,22 @@ class ControleRemoto implements Controlador{
         $this->tocando = false;
     }
     
-    public function getVolume() {
+    private function getVolume() {
         return $this->volume;
     }
-    public function getLigado() {
+    private function getLigado() {
         return $this->ligado;
     }
-    public function getTocando() {
+    private function getTocando() {
         return $this->tocando;
     }
-    public function setVolume($volume): void {
+    private function setVolume($volume): void {
         $this->volume = $volume;
     }
-    public function setLigado($ligado): void {
+    private function setLigado($ligado): void {
         $this->ligado = $ligado;
     }
-    public function setTocando($tocando): void {
+    private function setTocando($tocando): void {
         $this->tocando = $tocando;
     }
 
@@ -40,9 +40,10 @@ class ControleRemoto implements Controlador{
         $this->setLigado(false);
     }
     public function abrirMenu() {
-        echo('Está ligado: ' . ($this->getLigado())?"Sim":"Não");
-        echo "Está tocando: " . ($this->getTocando()?"Sim":"Não");
-        echo "Volume: " . $this->getVolume();
+        echo "<p>-------Menu-------</p>";
+        echo "Esta ligado: " . ($this->getLigado()?"Sim":"Não") . "<br>";
+        echo "Está tocando: " . ($this->getTocando()?"Sim":"Não") . "<br>";
+        echo "Volume: " . $this->getVolume() . "<br>";
     }
     public function fecharMenu() {
         echo "Fechando menu...";
@@ -57,28 +58,25 @@ class ControleRemoto implements Controlador{
             $this->setVolume(20);
         }
     } 
-
-    
-
-    
-
     public function maisVolume() {
         if($this->getVolume()<=95 && $this->getLigado()){
             $this->setVolume($this->getVolume()+5);
         }
     }
-
     public function menosVolume() {
         if($this->getVolume()>=5 && $this->getLigado()){
             $this->setVolume($this->getVolume()-5);
         }
-    }
-
-    public function pause() {
-        
-    }
-
+    }  
     public function play() {
+        if($this->getLigado() && !$this->getTocando()){
+            $this->setTocando(true);
+        }
+    }
+    public function pause() {
+        if($this->getLigado() && $this->getTocando()){
+            $this->setTocando(false);
+        }
         
     }
 
