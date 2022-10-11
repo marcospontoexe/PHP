@@ -8,6 +8,7 @@
     <body>
         <?php
             require_once 'Lutador.php';
+            require_once 'Luta.php';
             $l = array();                   //cria um array
             //cria  objetos
             $l[0] = new Lutador("PretyBoy", "França", 31, 1.75, 68.9, 11, 2, 1);  
@@ -20,7 +21,11 @@
             
             //usando métodos dos objetos
             $l[0]->apresentar();
-            $l[3]->status();
+            $l[0]->status();
+            
+            $pancadaria = new Luta();
+            $pancadaria->marcarLuta(l[0], l[2]);
+            
             
         ?>
     </body>
