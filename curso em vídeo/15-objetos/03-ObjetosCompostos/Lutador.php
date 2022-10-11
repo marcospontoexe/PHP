@@ -15,19 +15,33 @@ class Lutador {
     
     //metodos
     public function apresentar(){
+        echo "-----------APRESENTANDO------------------<br>";
+        echo "Chegou a hora!<br>";        
+        echo "Vindo diretamente da " . $this->getNacionalidade();
+        echo " com " . $this->getIdade() . " anos, e pesando " . $this->getPeso() . " quilos";
+        echo "<br>com " .$this->getVitorias() . " vitórias, " . $this->getDerrotas() . " derrotas e " . $this->getEmpates() . " empates...";
+        echo "<br>O lutador " . $this->getNome() . "<br>";
+        echo "<p></p>";
         
     }
     public function status(){
+        echo "-----------STATUS------------------<br>";
+        echo $this->getNome() . " da categoria " . $this->getCategoria()."<br>";
+        echo "já ganhou " . $this->getVitorias() . " lutas<br>";
+        echo "perdeu " . $this->getDerrotas() . " lutas<br>";
+        echo " e empatou " . $this->getEmpates() . "vezes.<br>";
+        echo "<p></p>";
         
     }
     public function ganharLuta(){
+        $this->setVitorias($this->getVitorias()+1);
         
     }
     public function perderLuta(){
-        
+        $this->setDerrotas($this->getDerrotas()+1);
     }
     public function empatarLuta(){
-        
+        $this->setEmpates($this->getEmpates()+1);
     }
     
     //métodos especiais
@@ -99,7 +113,7 @@ class Lutador {
         $this->setCategoria();
     }
 
-    public function setCategoria(): void {
+    private function setCategoria(): void {
         if($this->peso < 52.2){
             $this->categoria = "Categoria inválida, peso muito leve";
         }
@@ -128,7 +142,4 @@ class Lutador {
     public function setEmpates($empates): void {
         $this->empates = $empates;
     }
-
-
-
 }
