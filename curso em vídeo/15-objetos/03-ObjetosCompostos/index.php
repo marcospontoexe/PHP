@@ -19,12 +19,13 @@
             $l[5] = new Lutador("NerdArt", "EUA", 30, 1.81, 105.7, 12, 2, 4);
             
             
-            //usando métodos dos objetos
-            $l[0]->apresentar();
-            $l[0]->status();
+            
             
             $pancadaria = new Luta();
-            $pancadaria->marcarLuta(l[0], l[2]);
+            $pancadaria->marcarLuta($l[0], $l[1]);
+            $pancadaria->lutar();
+            $l[0]->status();
+            $l[1]->status();
             
             
         ?>

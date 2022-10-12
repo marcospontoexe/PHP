@@ -9,7 +9,7 @@ class Luta {
     
     //métodos
     public function marcarLuta($l1, $l2){
-        if($l1->getCategoria() === $l2->getCategoria() && $l1!=$l2){
+        if($l1->getCategoria() === $l2->getCategoria() && ($l1 != $l2)){
             $this->aprovada = true;
             $this->desafiado = $l1;
             $this->desafiante = $l2;
@@ -21,30 +21,31 @@ class Luta {
         }
     }
     public function lutar(){
-        if($this->aprovada){
+        if($this->aprovada){            
             $this->desafiado->apresentar();
             $this->desafiante->apresentar();
             $vencedor = rand(0,2);
             switch ($vencedor) {
                 case 0:     //empate
+                    echo "Os lutadores empataram a luta!<br>";
                     $this->desafiado->empatarLuta();
                     $this->desafiante->empatarLuta();
                     break;
                 
-                case 1:     //desafiado vence
-                    echo $this->desafiado->getNome() + " venceu a luta<br>";
+                case 1:     //desafiado vence                    
+                    echo $this->desafiado->getNome() . " venceu a luta<br>";
                     $this->desafiado->ganharLuta();
                     $this->desafiante->perderLuta();
                     break;
                 
                 case 2:     //desafiante vence
-                    echo $this->desafiante->getNome() + " venceu a luta<br>";
+                    echo $this->desafiante->getNome() . " venceu a luta<br>";
                     $this->desafiante->ganharLuta();
                     $this->desafiado->perderLuta();
-
                     break;
 
                 default:
+                    echo 'Erro no algoritmo de decisão da vitória!';
                     break;
             }
         }
