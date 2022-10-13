@@ -22,7 +22,7 @@
             
             
             $pancadaria = new Luta();
-            $pancadaria->marcarLuta($l[0], $l[1]);
+            $pancadaria->marcarLuta($l[0], $l[1]);      //agregação entre a classe Luta() e Lutador()
             $pancadaria->lutar();
             $l[0]->status();
             $l[1]->status();
