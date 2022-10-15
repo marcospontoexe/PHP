@@ -2,11 +2,11 @@
 //classe abstrata (raiz)
 abstract class Pessoa {
     //atributos
-    private $nome;
+    protected $nome;
     private $idade;
     private $sexo;
     
-    //método final
+    //método final, não pode ser sobreposto nas classes filhas
     public final function fazerAniversario() {
         $this->idade++;
     }
