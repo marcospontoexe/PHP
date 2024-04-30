@@ -10,7 +10,7 @@ class Caneta {
     
     //construtor
     public function Caneta($cor, $ponta) {
-        $this->cor = $cor;
+        $this->cor = $cor;      // this significa uma auto referência. Faz referência ao objeto que chamou a classe
         $this->ponta = $ponta;
         $this->carga = 100;
         $this->tampar();
