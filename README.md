@@ -40,7 +40,7 @@ PHP é fracamente tipado. Variáveis iniciam com `$` e não precisam declarar ti
 - Aceitam A–Z, a–z, 0–9, `_`.
 
 Exemplo: `variaveis.php`
-\`\`\`php
+```php
 <?php
 $x = "Linguagem PHP";
 echo "<p>A " . $x . " é show!</p>";
@@ -54,7 +54,7 @@ if ($aux)
 else
     echo "<p>Falso</p>";
 ?>
-\`\`\`
+```
 
 ---
 
