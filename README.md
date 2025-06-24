@@ -124,3 +124,66 @@ ola(); // saída: Olá mundo
 ?>
 ```
 
+
+## Operadores
+
+### 1. Operadores Aritméticos
+
+- `+` Adição
+- `-` Subtração
+- `*` Multiplicação
+- `/` Divisão
+- `%` Módulo
+- `**` Exponenciação (PHP 5.6+)
+
+```php
+<?php
+echo 5 + 2; // 7
+echo 5 ** 2; // 25
+?>
+```
+
+### 2. Operadores de Atribuição
+
+- `=` Atribuição básica
+- `+=, -=, *=, /=, %=, .=` Atribuição composta
+
+```php
+<?php
+$a = 10;
+$a += 5; // $a = 15
+$str = "Olá";
+$str .= " Mundo"; // "Olá Mundo"
+?>
+```
+
+### 3. Operadores de Comparação
+
+- `==` Igualdade (valor)
+- `===` Idêntico (valor e tipo)
+- `!=` Diferente
+- `!==` Não idêntico
+- `<, >, <=, >=`
+- `<=>` Nave Spaceship (PHP 7+)
+
+```php
+<?php
+var_dump(5 == '5'); // true
+var_dump(5 === '5'); // false
+?>
+```
+
+### 4. Operadores Lógicos
+
+- `&&` E lógico
+- `||` Ou lógico
+- `!` Negação
+- `and, or, xor` equivalentes de baixo precedência
+
+```php
+<?php
+if ($a > 0 && $b > 0) {
+    // ambos positivos
+}
+?>
+```
