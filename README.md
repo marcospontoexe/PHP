@@ -30,3 +30,25 @@ O php é uma linguagem de programação que executará em um servidor especial, 
 - PHP: [https://developer.mozilla.org/pt-BR/docs/Glossary/PHP](https://developer.mozilla.org/pt-BR/docs/Glossary/PHP)
 - Manual do PHP: [https://www.php.net/manual/pt\_BR/](https://www.php.net/manual/pt_BR/)
 - Site seguro HTTPS: Hostinger Tutoriais – HTTPS & SSL
+
+
+## Sintaxe básica
+
+Um script PHP é executado no servidor e o resultado puramente HTML é retornado ao navegador. Por esse motivo, como já vimos, um programa PHP é escrito dentro de uma estrutura HTML, que terá alguns de seus elementos gerados dinamicamente. Veja alguns elementos básicos do PHP.
+
+* **Extensão do arquivo**: `.php`
+* **Tags para a linguagem**: inicia com `<?php` e termina com `?>`.
+* **Finalização de linha de comando**: dentro das tags `<?php` e `?>`, cada linha de comando PHP deve terminar com `;`.
+* **Comentário de 1 linha de comando**: `# comentário` ou `// comentário`
+* **Comentário de blocos de linhas de comando**: `/* várias linhas de comentário */`
+
+PHP – sintaxe básica: [https://www.php.net/manual/pt\_BR/language.basic-syntax.php](https://www.php.net/manual/pt_BR/language.basic-syntax.php)
+
+```php
+<?php
+  /* Bloco
+de comentários*/
+  echo "Olá";     // uma linha de comentário: comando PHP termina com ;
+  echo "mundo!";  #  uma linha de comentário: comando PHP termina com ;
+?>
+```
