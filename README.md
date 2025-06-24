@@ -69,10 +69,6 @@ PHP variáveis: [https://www.php.net/manual/pt\_BR/language.variables.php](https
 
 ### PRÁTICA: Testando variáveis
 
-**EXPERIMENTE**
-
-**Exemplo: VARIÁVEIS: arquivo variaveis.php**
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -108,3 +104,23 @@ PHP variáveis: [https://www.php.net/manual/pt\_BR/language.variables.php](https
 </body>
 </html>
 ```
+
+### Escopo de Variáveis
+
+No PHP, o escopo de variáveis define onde elas podem ser acessadas:
+
+- **Variáveis locais**: definidas dentro de funções e acessíveis apenas dentro delas.
+- **Variáveis globais**: definidas no escopo global e acessíveis dentro de funções desde que explicitadas via `global`.
+- **Variáveis superglobais**: arrays pré-definidos pelo PHP que contêm informações específicas, como `$_GET`, `$_POST`, `$_SESSION`, `$_COOKIE`, `$_SERVER`, entre outros.
+
+```php
+<?php
+$x = "mundo"; // variável global
+function ola() {
+    global $x;
+    echo "Olá " . $x;
+}
+ola(); // saída: Olá mundo
+?>
+```
+
