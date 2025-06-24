@@ -52,3 +52,59 @@ de comentários*/
   echo "mundo!";  #  uma linha de comentário: comando PHP termina com ;
 ?>
 ```
+
+
+## Variáveis
+
+O PHP é uma linguagem fracamente tipada. Isso significa que não precisamos declarar qual é o tipo de dado quando criamos uma variável. Dessa forma, uma mesma variável pode receber valores numéricos, texto, booleanos, dentre outros, pois o PHP associa automaticamente um tipo de dado à variável, dependendo do valor que ela recebe.
+
+**Declarando variáveis:**
+
+- Não indicamos o tipo de dado da variável e iniciamos seu nome com `$`. Exemplo: `$x`, `$aux`, `$txt`.
+- São “case-sensitive”: `$abc` e `$ABC` são duas variáveis diferentes.
+- Nome de variável não pode iniciar com um número.
+- Nome de variável aceita apenas letras maiúsculas e minúsculas (A-z), números (0-9) e “underline” `_`.
+
+PHP variáveis: [https://www.php.net/manual/pt\_BR/language.variables.php](https://www.php.net/manual/pt_BR/language.variables.php)
+
+### PRÁTICA: Testando variáveis
+
+**EXPERIMENTE**
+
+**Exemplo: VARIÁVEIS: arquivo variaveis.php**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Teste de PHP</title>
+    <style>
+        body { background-color: darkolivegreen; }
+
+        p {  font-family: verdana;
+             color: white;
+             font-size: 16px; }
+    </style>
+</head>
+<body>
+    <?php
+    // Variável x recebe uma String
+    $x = "Linguagem PHP";
+    // O ponto . concatena Strings
+    echo "<p>A " . $x . " é show!</p>";
+
+    // Variável x recebe a raiz quadrada de 144
+    $x = sqrt(144);
+    echo "<p>Raiz quadrada de 144 = " . $x . "</p>";
+
+    // Variável aux recebe um valor booleano
+    $aux = (5 * 4 > 36);
+    if ($aux == true)
+        echo "<p>(5 * 4 > 36) = Verdade</p>";
+    else
+        echo "<p>(5 * 4 > 36) = Falso</p>";
+    ?>
+</body>
+</html>
+```
