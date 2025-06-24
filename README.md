@@ -3,101 +3,35 @@ PHP significa **Hypertext Preprocessor**. É uma linguagem de script open source
 
 O php é uma linguagem de programação que executará em um servidor especial, o** HTTP server**:
 
-> HTTP significa Hypertext Transfer Protocol, ou protocolo de transferência de hipertexto. É um protocolo de comunicação entre máquina cliente e máquina servidora.  
-> Um servidor HTTP é um programa que geralmente executa em um computador remoto, responsável pelo armazenamento, processamento e entrega dos arquivos dos sites para os navegadores.  
-> Na comunicação cliente-servidor, feita via protocolo HTTP, o navegador na máquina cliente solicita ao servidor na máquina remota uma URL: referência ao conteúdo HTML que será enviado ao navegador, como resposta a uma solicitação.
+* HTTP significa Hypertext Transfer Protocol, ou protocolo de transferência de hipertexto. É um protocolo de comunicação entre máquina cliente e máquina servidora.  
+* Um servidor HTTP é um programa que geralmente executa em um computador remoto, responsável pelo armazenamento, processamento e entrega dos arquivos dos sites para os navegadores.  
+* Na comunicação cliente-servidor, feita via protocolo HTTP, o navegador na máquina cliente solicita ao servidor na máquina remota uma URL: referência ao conteúdo HTML que será enviado ao navegador, como resposta a uma solicitação.
 
-![Comunicação HTTP entre cliente-servidor](Figura1.png)  
+![Comunicação HTTP entre cliente-servidor](https://github.com/marcospontoexe/PHP/blob/main/Imagens/1.jpg)  
 *Figura 1: Comunicação HTTP entre cliente-servidor.*
 
-**HTTPS**: Hypertext Transfer Protocol Secure. É o protocolo HTTP seguro, pois a comunicação entre cliente e servidor é criptografada para deixá-la confidencial. Devemos usar HTTPS sempre que precisarmos transmitir dados sensíveis, como dados bancários, senhas etc.
+* Já o **HTTPS** significa Hypertext Transfer Protocol Secure. Ele é o protocolo **HTTP seguro**, pois a comunicação entre cliente e servidor é **criptografada** para deixá-la **confidencial**. Com isso, a troca de dados pela internet apenas ocorre após a identificação e autenticação do servidor, garantindo a privacidade e integridade dos dados transmitidos. Devemos usar HTTPS sempre que precisarmos **transmitir dados sensíveis** entre navegador e servidor, como número de contas bancárias, de cartão de crédito, senhas etc.
 
----
+* Por fim, a sigla **PHP** significa **Hypertext Preprocessor**. É uma linguagem de script open source de uso geral, muito utilizada para o desenvolvimento de aplicações web integradas com códigos HTML. Os arquivos PHP podem conter texto, HTML, CSS, JavaScript, além do próprio código PHP, que é executado no servidor. O resultado da interpretação do script do PHP, cujos arquivos têm a extensão **.php**, é retornado ao navegador como um documento puramente HTML. 
+* O PHP possui várias funcionalidades nativas, além de muitas bibliotecas extras, que, ao executar no lado servidor, permitem:
+    * Gerar páginas HTML dinâmicas.
+    * Criar, abrir, ler, escrever, excluir e fechar arquivos no servidor.
+    * Coletar dados de formulário.
+    * Enviar e receber cookies.
+    * Criar, manter e destruir variáveis de sessão.
+    * Adicionar, excluir, modificar dados em seu banco de dados.
+    * Controlar o acesso do usuário.
+    * Criptografar dados.
 
+**Saiba mais**:
 
-### Funcionalidades do PHP
+- Tutorial PHP: [https://www.w3schools.com/php/default.asp](https://www.w3schools.com/php/default.asp)
+- MILETTO, Evandro Manara; BERTAGNOLLI, Silvia de Castro. *Desenvolvimento de Software II: introdução ao desenvolvimento web com html, css, javascript e php.* Porto Alegre: Bookman, 2014. 276 p. Capítulo 7 – Linguagem PHP (Utilização de cookies e sessões: página 189)
+- PHP: [https://developer.mozilla.org/pt-BR/docs/Glossary/PHP](https://developer.mozilla.org/pt-BR/docs/Glossary/PHP)
+- Manual do PHP: [https://www.php.net/manual/pt\_BR/](https://www.php.net/manual/pt_BR/)
+- Site seguro HTTPS: Hostinger Tutoriais – HTTPS & SSL
 
-- Gerar páginas HTML dinâmicas.  
-- Criar, abrir, ler, escrever, excluir e fechar arquivos no servidor.  
-- Coletar dados de formulário.  
-- Enviar e receber cookies.  
-- Criar, manter e destruir variáveis de sessão.  
-- Adicionar, excluir, modificar dados em banco de dados.  
-- Controlar acesso de usuários.  
-- Criptografar dados.
-
-### Referências Externas
-
-- Tutorial PHP (W3Schools): <https://www.w3schools.com/php/default.asp>  
-- MDN Glossary – PHP: <https://developer.mozilla.org/pt-BR/docs/Glossary/PHP>  
-- Manual do PHP: <https://www.php.net/manual/pt_BR/>  
-- Hostinger Tutoriais – HTTPS & SSL: <https://www.hostinger.com.br/tutoriais/o-que-e-ssl-tls-https>
-
----
-
-## Configurando o Ambiente (XAMPP)
-
-Para exemplos em PHP, instale o XAMPP, que inclui Apache (com PHP) e MySQL. Copie suas pastas de trabalho para `C:\xampp\htdocs`, por exemplo `C:\xampp\htdocs\Teste-Front`.
-
-- Inicie o Apache pelo Painel do XAMPP.  
-- Acesse no navegador: `http://localhost/teste-front/` ou `http://127.0.0.1/teste-front/`.
-
-![Painel XAMPP e site exemplo](Figura3.png)  
-*Figura 3: Site acessado a partir do Apache.*
-
-Se houver `index.html` ou `index.php`, o Apache o identifica automaticamente como página inicial.
-
-### Exemplo: “Olá Mundo” em PHP
-
-Crie `index.php` em `htdocs`:  
-\`\`\`php
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Teste de PHP</title>
-    <style>
-        body { background-color: lightsteelblue; }
-        p { font-family: verdana; color: white; font-size: 16px; }
-    </style>
-</head>
-<body>
-    <?php
-    // Imprime dados na tela.
-    echo "<p>Olá mundo!</p>";
-    print "<p>Olá de novo, mundo!</p>";
-    ?>
-</body>
-</html>
-\`\`\`  
-1. Estrutura HTML básica.  
-2. Código PHP entre `<?php` e `?>`.  
-3. Uso de `echo` e `print`.  
-4. Comentários com `//`.
-
----
-
-## Sintaxe Básica
-
-- Extensão de arquivo: `.php`  
-- Delimitadores: `<?php` ... `?>`  
-- Linhas terminam com `;`.  
-- Comentários: `#`, `//`, `/* ... */`.
-
-\`\`\`php
-<?php
-  /* Bloco de comentários */
-  echo "Olá";     // comentário
-  echo "mundo!";  # comentário
-?>
-\`\`\`
-
-Referências:  
-<https://www.php.net/manual/pt_BR/language.basic-syntax.php>
-
----
-
-## Variáveis
+### Variáveis
 
 PHP é fracamente tipado. Variáveis iniciam com `$` e não precisam declarar tipo.
 
