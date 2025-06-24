@@ -1,13 +1,7 @@
-# Materiais Online: Fundamentos de Programação Web
-## UNIDADE 05 – PHP
+# PHP
+PHP significa **Hypertext Preprocessor**. É uma linguagem de script open source, usada no desenvolvimento de aplicações web integradas com HTML. Arquivos PHP podem conter HTML, CSS, JavaScript e código PHP. A interpretação retorna um documento HTML puro ao navegador.
 
-**Fonte:** 5-PHP.pdf fileciteturn0file0
-
----
-
-Olá!
-
-Agora, vamos começar nosso desenvolvimento do lado servidor da aplicação, ou back-end. Isso significa que agora, trabalharemos com uma linguagem de programação que executará em um servidor especial, o HTTP server:
+O php é uma linguagem de programação que executará em um servidor especial, o** HTTP server**:
 
 > HTTP significa Hypertext Transfer Protocol, ou protocolo de transferência de hipertexto. É um protocolo de comunicação entre máquina cliente e máquina servidora.  
 > Um servidor HTTP é um programa que geralmente executa em um computador remoto, responsável pelo armazenamento, processamento e entrega dos arquivos dos sites para os navegadores.  
@@ -20,9 +14,6 @@ Agora, vamos começar nosso desenvolvimento do lado servidor da aplicação, ou 
 
 ---
 
-## Introdução ao PHP
-
-PHP significa **Hypertext Preprocessor**. É uma linguagem de script open source, usada no desenvolvimento de aplicações web integradas com HTML. Arquivos PHP podem conter HTML, CSS, JavaScript e código PHP. A interpretação retorna um documento HTML puro ao navegador.
 
 ### Funcionalidades do PHP
 
