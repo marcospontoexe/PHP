@@ -1,7 +1,111 @@
 # PHP
+
+Meus estudos de PHP: exercícios e projetos desenvolvidos nos cursos de PHP do [Curso em Vídeo](https://www.cursoemvideo.com/), com o professor Gustavo Guanabara, e anotações teóricas sobre a linguagem.
+
+## Sumário
+
+- [Cursos](#cursos)
+- [Projetos desenvolvidos](#projetos-desenvolvidos)
+  - [Fundamentos da linguagem](#fundamentos-da-linguagem)
+  - [Programação orientada a objetos](#programação-orientada-a-objetos)
+- [Como executar](#como-executar)
+- Anotações de estudo: [O que é PHP](#o-que-é-php) · [Sintaxe básica](#sintaxe-básica) · [Variáveis](#variáveis) · [Operadores](#operadores)
+
+## Cursos
+
+O material fica na pasta [curso em vídeo/](curso%20em%20vídeo/) e vem de três cursos:
+
+- [Curso de PHP Moderno](https://www.youtube.com/watch?v=TfsO0BGvGn0&list=PLHz_AreHm4dlFPrCXCmd5g92860x_Pbr_)
+- [Curso de PHP para Iniciantes](https://www.youtube.com/watch?v=F7KzJ7e6EAc&list=PLHz_AreHm4dm4beCCCmW4xwpmLf6EHY9k)
+- [Curso de POO PHP](https://www.youtube.com/watch?v=KlIL63MeyMY&list=PLHz_AreHm4dmGuLII3tsvryMMD7VgcT7x)
+
+As pastas `01` a `14` cobrem os fundamentos da linguagem e a pasta `15-objetos` reúne os projetos de programação orientada a objetos.
+
+## Projetos desenvolvidos
+
+### Fundamentos da linguagem
+
+Cada aula é uma página HTML com código PHP embutido.
+
+| Aula | O que foi praticado |
+|---|---|
+| [01-echo](curso%20em%20vídeo/01-echo/ola.php) | Primeiro script: `echo` e `print` gerando HTML |
+| [02-variaveis](curso%20em%20vídeo/02-variaveis/variaveis.php) | Tipos de dados, conversão com `(int)`, concatenação e interpolação de strings, variáveis por referência (`&`) e variáveis variáveis (`$$`) |
+| [03-operadores](curso%20em%20vídeo/03-operadores/operadores.php) | Operadores aritméticos, operador ternário e funções matemáticas (`abs`, `pow`, `sqrt`, `round`, `intval`, `number_format`) |
+| [04-input](curso%20em%20vídeo/04-input/input.php) | Leitura de parâmetros da URL com `$_GET`, operador `??` e validação com `is_numeric` (ex.: `input.php?a=2&b=5`) |
+| [05-formularios](curso%20em%20vídeo/05-formularios/) | Formulário HTML enviado por GET: o PHP calcula a idade a partir do ano de nascimento e aplica ao CSS o tamanho e a cor de fonte escolhidos, usando `isset` e ternário para os valores padrão. Os dados digitados passam por `htmlspecialchars` (proteção contra XSS), e a cor e a fonte são validadas antes de entrar no CSS |
+| [06-if](curso%20em%20vídeo/06-if/if.php) · [07-switch](curso%20em%20vídeo/07-switch/switch.php) | Estruturas condicionais: classificação por faixa etária com `if/elseif/else` e com `switch (true)` |
+| [08-while](curso%20em%20vídeo/08-while/while.php) · [09-doWhile](curso%20em%20vídeo/09-doWhile/doWhile.php) · [10-for](curso%20em%20vídeo/10-for/for.php) | Estruturas de repetição: contagem de 1 a 10 com `while`, `do-while` e `for` |
+| [11-funcoes](curso%20em%20vídeo/11-funcoes/funcao.php) | Funções com parâmetros e retorno, número variável de argumentos (`func_get_args`, `func_num_args`) e inclusão de arquivos externos (`include`, `require` e as variantes `_once`) |
+| [12-string](curso%20em%20vídeo/12-string/string.php) | Mais de 20 funções de manipulação de strings: `printf`, `wordwrap`, `strlen`, `str_word_count`, `explode`/`implode`, `strpos`, `substr`, `str_pad`, `str_replace`, `ucwords` e outras |
+| [13-vetores](curso%20em%20vídeo/13-vetores/vetor.php) | Arrays: inclusão e remoção de elementos (`array_push`, `array_pop`, `array_unshift`, `array_shift`, `unset`), `range`, chaves personalizadas e associativas, `foreach`, `count` e ordenação (`sort`, `rsort`, `asort`) |
+| [14-matriz](curso%20em%20vídeo/14-matriz/matriz.php) | Arrays multidimensionais (matrizes): criação, leitura e alteração de elementos |
+
+### Programação orientada a objetos
+
+Cada projeto tem um arquivo por classe e um `index.php` que cria os objetos e mostra o estado deles com `print_r`.
+
+#### Classes e objetos — Caneta
+
+[15-objetos/01-Classes](curso%20em%20vídeo/15-objetos/01-Classes/)
+
+Primeira classe do curso: atributos privados, construtor, métodos (`rabiscar`, `tampar`, `destampar`) e métodos acessores e modificadores (getters e setters).
+
+#### Interface e encapsulamento — Controle remoto
+
+[15-objetos/02-encapsulamento/01-interface](curso%20em%20vídeo/15-objetos/02-encapsulamento/01-interface/)
+
+A interface `Controlador` define os comandos (ligar, menu, volume, mudo, play e pause) e a classe `ControleRemoto` a implementa. O estado do controle e os próprios getters e setters são privados, por isso só muda através dos métodos da interface. O volume vai de 0 a 100, em passos de 5, e os comandos só funcionam com o controle ligado.
+
+#### Objetos compostos — Ultra Emoji Combat
+
+[15-objetos/02-encapsulamento/02-ObjetosCompostos](curso%20em%20vídeo/15-objetos/02-encapsulamento/02-ObjetosCompostos/)
+
+Simulador de lutas. O `Lutador` define a própria categoria (leve, médio ou pesado) a partir do peso, num setter privado. A `Luta` recebe dois lutadores e só é aprovada se forem lutadores diferentes, da mesma categoria e dentro dos limites de peso. O resultado (vitória de um deles ou empate) é sorteado e atualiza o cartel de cada lutador.
+
+#### Herança — Pessoa, Aluno e Bolsista
+
+[15-objetos/03-herança](curso%20em%20vídeo/15-objetos/03-herança/)
+
+`Pessoa` é uma classe abstrata com o método `final` `fazerAniversario()`. Dela derivam:
+
+- `Visitante`: herança pobre, não acrescenta nada à classe mãe;
+- `Aluno`: herança para diferença, com matrícula, curso e `pagarMensalidade()`;
+- `Bolsista`: classe `final` que estende `Aluno`, sobrescreve `pagarMensalidade()` para aplicar o desconto da bolsa e acrescenta `renovarBolsa()`.
+
+#### Polimorfismo — Animal, Mamífero e Canguru
+
+[15-objetos/04-polimorfismo](curso%20em%20vídeo/15-objetos/04-polimorfismo/)
+
+`Animal` é abstrata e declara `locomover()`, `alimentar()` e `emitirSom()` como métodos abstratos. `Mamifero` implementa os três e `Canguru` sobrescreve `locomover()` (polimorfismo de sobreposição). Como o PHP não suporta sobrecarga de métodos, as reações do canguru a estímulos diferentes ficam em métodos separados (`reagirFrase()`, `reagirDono()`, `reagirIdade()`).
+
+#### Agregação entre classes — Plataforma de vídeos
+
+[15-objetos/05-agregação entre classes](curso%20em%20vídeo/15-objetos/05-agregação%20entre%20classes/)
+
+`Video` implementa a interface `AcoesVideo` (play, pause e like). `User` herda da classe abstrata `Pessoa` e chama o construtor da classe mãe com `parent::__construct()`. `Visualizacao` agrega um usuário e um vídeo: ao ser criada, soma uma visualização ao vídeo e um vídeo assistido ao usuário.
+
+## Como executar
+
+É preciso ter o PHP 7.1 ou superior (todas as aulas foram testadas no PHP 8.5), usando o servidor embutido do PHP ou um pacote como XAMPP ou WampServer. Com o servidor embutido, inicie-o **dentro da pasta da aula**, porque os projetos de POO carregam as classes com `require_once './Classe.php'`, um caminho que depende do diretório de trabalho:
+
+```bash
+git clone https://github.com/marcospontoexe/PHP.git
+cd "PHP/curso em vídeo/15-objetos/03-herança"
+php -S localhost:8000
+```
+
+Depois abra `http://localhost:8000/index.php` no navegador, ou o nome do arquivo da aula (ex.: `ola.php`, `string.php`). Na aula `05-formularios`, comece pelo `index.html`.
+
+Projeto distribuído sob a licença MIT. Veja [LICENSE](LICENSE).
+
+---
+
+## O que é PHP
+
 PHP significa **Hypertext Preprocessor**. É uma linguagem de script open source, usada no desenvolvimento de aplicações web integradas com HTML. Arquivos PHP podem conter HTML, CSS, JavaScript e código PHP. A interpretação retorna um documento HTML puro ao navegador.
 
-O php é uma linguagem de programação que executará em um servidor especial, o** HTTP server**:
+O php é uma linguagem de programação que executará em um servidor especial, o **HTTP server**:
 
 * HTTP significa Hypertext Transfer Protocol, ou protocolo de transferência de hipertexto. É um protocolo de comunicação entre máquina cliente e máquina servidora.  
 * Um servidor HTTP é um programa que geralmente executa em um computador remoto, responsável pelo armazenamento, processamento e entrega dos arquivos dos sites para os navegadores.  
