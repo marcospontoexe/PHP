@@ -12,11 +12,15 @@
     Para atribuir valores às variáveis pela URL, tem que colocar interrogação após o ".php"
     exemplo: endereço.com/diretorio%qualquer/caminho/..../programa.php?a=2&b=5
     */
-        $n1 = $_GET["a"];       /* n1 recebe o valor fornecido na URL*/
-        $n2 = $_GET["b"];       /* n2 recebe o valor fornecido na URL*/
-        $soma = $n1 + $n2;
+        $n1 = $_GET["a"] ?? null;       /* n1 recebe o valor fornecido na URL (?? usa null se 'a' não existir) */
+        $n2 = $_GET["b"] ?? null;       /* n2 recebe o valor fornecido na URL*/
 
-        echo "A soma entre $n1 e $n2 é igual a $soma";
+        if (is_numeric($n1) && is_numeric($n2)) {       // só soma se os dois valores forem números
+            $soma = $n1 + $n2;
+            echo "A soma entre $n1 e $n2 é igual a $soma";
+        } else {
+            echo "Informe dois números na URL, ex.: input.php?a=2&b=5";
+        }
 
     ?>
 </body>
