@@ -10,7 +10,9 @@
     <?php   
         $idade = -25;
 
-        switch($idade){
+        // switch(true): executa o primeiro case cuja condição for verdadeira.
+        // Com switch($idade), a idade seria comparada com true/false, e a idade 0 cairia em "Adulto!".
+        switch(true){
 
             case($idade >= 0 && $idade < 18):
                 echo "Menor de idade!";
