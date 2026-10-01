@@ -41,7 +41,7 @@ class ControleRemoto implements Controlador{
     }
     public function abrirMenu() {
         echo "<p>-------Menu-------</p>";
-        echo "Esta ligado: " . ($this->getLigado()?"Sim":"Não") . "<br>";
+        echo "Está ligado: " . ($this->getLigado()?"Sim":"Não") . "<br>";
         echo "Está tocando: " . ($this->getTocando()?"Sim":"Não") . "<br>";
         echo "Volume: " . $this->getVolume() . "<br>";
     }

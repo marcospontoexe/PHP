@@ -25,7 +25,7 @@
         echo "</br>";
 
         echo "wordwrap()</br>";
-        $palavra = "Este é um exemplo usado para mostrar string grandes, usadndo o wordwra para fazer quebra de linhas!";
+        $palavra = "Este é um exemplo usado para mostrar strings grandes, usando o wordwrap para fazer quebra de linhas!";
         $quebra = wordwrap($palavra, 10, "<br>\n", true); /*Cria quebras de linha ou divisões em uma string em um tamanho especificado. O false quabra nas palavras, o true quebra nas letras*/
         echo "$quebra";
         echo "</br>";
@@ -35,7 +35,7 @@
         echo "strlen()</br>";
         $nome = "marcos daniel santana";
         $nnome = strlen($nome); /*Retorna o tamanho de uma string, contando seus caracteres (inclusive espaços em branco).*/
-        echo "a string nnome contém $nnome caracteres! ";
+        echo "a string '$nome' contém $nnome caracteres! ";
     
         /*
         trim(); //Retorna uma string sem espaços em branco antes e depois de uma string.
@@ -46,7 +46,7 @@
         echo "*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*";
         echo "</br>";
 
-        echo "str_word_coun(0)</br>";
+        echo "str_word_count(0)</br>";
         $ex = "hoje eu vou estudar pra valer";
         $qex = str_word_count($ex, 0); //Conta quantas palavras uma string possui.
         echo "A string contém $qex palavras!";
@@ -54,7 +54,7 @@
         echo "*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*";
         echo "</br>";
 
-        echo "str_word_coun(1)</br>";
+        echo "str_word_count(1)</br>";
         $aex = str_word_count($ex, 1); /*Cria uma array com as palavras da string, mantendo a posição dos elementos d astring.*/
         print_r($aex);
         echo "</br>";
@@ -85,7 +85,7 @@
 
         echo "chr()</br>";
         $lt = chr(69); //Retorna um caractere de acordo com seu código ASCII passado como parâmetro.  
-        echo "O 69 equilava a letra $lt!";     
+        echo "O 69 equivale à letra $lt!";     
         echo "</br>";
         echo "*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*";
         echo "</br>";
@@ -157,10 +157,10 @@
 
         echo "substr(str, int, int)</br>";
         echo "frase original: $txtt</br>";
-        echo "substr(str, 0, 4): ". substr($txtt, 0, 5). "<br>";   //mostra apenas os 5 primeiros caracteres
-        echo "substr(str, 5): ". substr($txtt, 6). "<br>";   //mostra apenas os caracteres a partir da 6° posição
-        echo "substr(str, 5): ". substr($txtt, -3). "<br>";   //mostra apenas os 3 ultimos caracteres
-        echo "substr(str, 5): ". substr($txtt, -3, 1). "<br>";   //considerando os 3 ultimos caracteres, mostra apenas o 1°
+        echo "substr(str, 0, 5): ". substr($txtt, 0, 5). "<br>";   //mostra apenas os 5 primeiros caracteres
+        echo "substr(str, 6): ". substr($txtt, 6). "<br>";   //mostra apenas os caracteres a partir do índice 6 (7º caractere)
+        echo "substr(str, -3): ". substr($txtt, -3). "<br>";   //mostra apenas os 3 ultimos caracteres
+        echo "substr(str, -3, 1): ". substr($txtt, -3, 1). "<br>";   //considerando os 3 ultimos caracteres, mostra apenas o 1°
         echo "</br>";
         echo "*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*";
         echo "</br>";
@@ -168,9 +168,9 @@
         echo "str_pad(str, int, str, STR_PAD_RIGHT)</br>";
         $nommee = "marcos";
         echo "frase original: $nommee</br>";
-        echo "str_pad(TR_PAD_RIGHT): ". str_pad($nommee, 20, "#", STR_PAD_RIGHT). " <br>!";   /*completa com '#' a direita, até a string ficar com 20 elementos*/
-        echo "str_pad(STR_PAD_BOTH): ". str_pad($nommee, 20, "#", STR_PAD_BOTH). " <br>!";   /*completa com '#' a esquerda e direita, até a string ficar com 20 elementos*/
-        echo "str_pad(STR_PAD_LEFT): ". str_pad($nommee, 20, "#", STR_PAD_LEFT). " <br>!";   /*completa com '#' a esquerda, até a string ficar com 20 elementos*/
+        echo "str_pad(STR_PAD_RIGHT): ". str_pad($nommee, 20, "#", STR_PAD_RIGHT). "<br>";   /*completa com '#' a direita, até a string ficar com 20 elementos*/
+        echo "str_pad(STR_PAD_BOTH): ". str_pad($nommee, 20, "#", STR_PAD_BOTH). "<br>";   /*completa com '#' a esquerda e direita, até a string ficar com 20 elementos*/
+        echo "str_pad(STR_PAD_LEFT): ". str_pad($nommee, 20, "#", STR_PAD_LEFT). "<br>";   /*completa com '#' a esquerda, até a string ficar com 20 elementos*/
         echo "</br>";
         echo "*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*";
         echo "</br>";

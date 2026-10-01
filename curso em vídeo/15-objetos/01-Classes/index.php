@@ -24,7 +24,7 @@
                 $c1->tampar();
                 print_r($c1); 
                 
-                print "Eu temho uma caneta {$c1->getModelo()} {$c1->getCor()}";
+                print "Eu tenho uma caneta {$c1->getModelo()} {$c1->getCor()}";
 
             ?>
         </pre>

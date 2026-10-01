@@ -41,7 +41,7 @@
         echo str_repeat("*-", 40) . "<br>"; 
        
 
-        echo "unset(vect)";
+        echo "unset(\$v[1]): ";
         unset($v[1]);       //exclui o 2º elemento do vetor v
         print_r($v);
         echo "<br>";
@@ -100,7 +100,7 @@
         echo "<br>";
         echo str_repeat("*-", 40) . "<br>";
 
-        echo "Ordenando vetores associativos<br>";
+        echo "Ordenando vetores mantendo a associação entre índices e valores (asort)<br>";
         $res = array(5, 8, 9, 4, 88 ,12);
         echo "vetor original: ";
         print_r($res);
