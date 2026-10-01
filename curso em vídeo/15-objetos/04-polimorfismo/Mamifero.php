@@ -11,7 +11,7 @@ class Mamifero extends Animal{
         
     }
     public function emitirSom() {
-        echo "<p>Som de mamídero</p>";
+        echo "<p>Som de mamífero</p>";
         
     }
     public function locomover() {
