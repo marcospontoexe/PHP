@@ -8,8 +8,8 @@ class Caneta {
     private $carga;
     private $tampada;    
     
-    //construtor
-    public function Caneta($cor, $ponta) {
+    //construtor (no PHP 8, um método com o nome da classe não é mais construtor; use __construct)
+    public function __construct($cor, $ponta) {
         $this->cor = $cor;      // this significa uma auto referência. Faz referência ao objeto que chamou a classe
         $this->ponta = $ponta;
         $this->carga = 100;

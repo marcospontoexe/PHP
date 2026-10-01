@@ -9,7 +9,8 @@ class Luta {
     
     //métodos
     public function marcarLuta($l1, $l2){
-        if($l1->getCategoria() === $l2->getCategoria() && ($l1 != $l2)){
+        // !== compara a identidade: só recusa se for o mesmo objeto (com != dois lutadores com os mesmos dados seriam "iguais")
+        if($l1 !== $l2 && $l1->categoriaValida() && $l1->getCategoria() === $l2->getCategoria()){
             $this->aprovada = true;
             $this->desafiado = $l1;
             $this->desafiante = $l2;

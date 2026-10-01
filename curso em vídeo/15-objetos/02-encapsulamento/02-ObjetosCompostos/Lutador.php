@@ -17,8 +17,8 @@ class Lutador {
     public function apresentar(){
         echo "-----------APRESENTANDO------------------<br>";
         echo "Chegou a hora!<br>";        
-        echo "Vindo diretamente da " . $this->getNacionalidade();
-        echo " com " . $this->getIdade() . " anos, e pesando " . $this->getPeso() . " quilos";
+        echo "Nacionalidade: " . $this->getNacionalidade() . "<br>";
+        echo "Com " . $this->getIdade() . " anos, pesando " . $this->getPeso() . " quilos";
         echo "<br>com " .$this->getVitorias() . " vitórias, " . $this->getDerrotas() . " derrotas e " . $this->getEmpates() . " empates...";
         echo "<br>O lutador " . $this->getNome() . "<br>";
         echo "<p></p>";
@@ -29,7 +29,7 @@ class Lutador {
         echo $this->getNome() . " da categoria " . $this->getCategoria()."<br>";
         echo "já ganhou " . $this->getVitorias() . " lutas<br>";
         echo "perdeu " . $this->getDerrotas() . " lutas<br>";
-        echo " e empatou " . $this->getEmpates() . "vezes.<br>";
+        echo " e empatou " . $this->getEmpates() . " vezes.<br>";
         echo "<p></p>";
         
     }
@@ -129,6 +129,11 @@ class Lutador {
         else{          
             $this->categoria = "Categoria inválida, peso acima do limite";
         }
+    }
+
+    //lutadores fora dos limites de peso não podem lutar
+    public function categoriaValida(): bool {
+        return in_array($this->categoria, ["Peso leve", "Peso médio", "Peso pesado"], true);
     }
 
     public function setVitorias($vitorias): void {
