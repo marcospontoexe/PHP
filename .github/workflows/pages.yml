@@ -1,0 +1,57 @@
+# Publica no GitHub Pages uma versão estática das aulas.
+# O GitHub Pages não executa PHP: scripts/gerar-site.php roda o servidor embutido do PHP,
+# salva o HTML de cada página em _site/ e esse resultado é publicado.
+# Em pull requests o site só é gerado (sem publicar): serve de teste, porque o script falha
+# se alguma página não abrir ou mostrar Warning/Deprecated/Fatal error.
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          coverage: none
+
+      - name: Gerar o site estático
+        run: php scripts/gerar-site.php
+
+      - name: Configurar o GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Enviar o site gerado
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    if: github.event_name != 'pull_request'
+    needs: gerar
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
