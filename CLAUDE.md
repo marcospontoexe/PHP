@@ -16,14 +16,18 @@ O README também é a vitrine do repositório: o utilizador pretende incluir est
 
 ## Executar / verificar
 
-Não há build, composer, testes nem linter. Os scripts são páginas HTML com blocos `<?php ?>` embutidos, pensadas para abrir no navegador via servidor PHP:
+Não há composer nem framework de testes. Os scripts são páginas HTML com blocos `<?php ?>` embutidos, pensadas para abrir no navegador via servidor PHP:
 
 ```powershell
 # servir tudo a partir da raiz: o index.php da raiz lista todas as aulas com links
 php -S localhost:8000
 # verificação de sintaxe de um ficheiro
 php -l "curso em vídeo\12-string\string.php"
+# gera o site estático em _site/ e FALHA se alguma página der HTTP != 200 ou Warning/Deprecated/Fatal (é o teste das aulas)
+php scripts/gerar-site.php
 ```
+
+GitHub Pages: o workflow [.github/workflows/pages.yml](.github/workflows/pages.yml) executa [scripts/gerar-site.php](scripts/gerar-site.php) em todo PR (só como teste) e publica `_site/` a cada push no `main`. O gerador segue os links do `index.php` da raiz; páginas fora do índice vão em `$extras` e as notas do aviso em `$notas`. Os detalhes estão em [DOCS/github-pages.md](DOCS/github-pages.md).
 
 Nesta máquina:
 - **PHP 8.5** foi instalado com `winget install PHP.PHP.8.5` (sem `php.ini`). Num shell aberto antes da instalação, recarregue o PATH: `$env:Path = [Environment]::GetEnvironmentVariable('Path','User') + ';' + [Environment]::GetEnvironmentVariable('Path','Machine')`.
