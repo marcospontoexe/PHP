@@ -1,8 +1,8 @@
 <?php
-//interface 
-interface AcoesVideo {    
+//interface
+interface AcoesVideo {
     //metodos abstratos
-    public function play();
-    public function pause();
-    public function like();
+    public function play(): void;
+    public function pause(): void;
+    public function like(): void;
 }

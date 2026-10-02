@@ -2,9 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Herança - Pessoa, Aluno e Bolsista</title>
     </head>
     <body>
+        <h1>Herança - Pessoa, Aluno e Bolsista</h1>
         <pre>
             <?php
                 require_once 'Visitante.php';
@@ -16,6 +17,7 @@
                 $v1->setNome("Jurema");
                 $v1->setIdade(61);
                 $v1->setSexo("F");
+                $v1->fazerAniversario();    //método final herdado de Pessoa(): a idade passa de 61 para 62
                 print_r($v1);
                 
                 $al1 = new Aluno();

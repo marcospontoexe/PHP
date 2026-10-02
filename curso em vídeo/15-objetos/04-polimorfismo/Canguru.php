@@ -3,35 +3,35 @@
 require_once './Mamifero.php';
 class Canguru extends Mamifero{
     //atributos
-    
+
     //métodos sobrescrito (polimorfismo de sobreposição)
-    public function locomover() {
+    public function locomover(): void {
         echo "<p>Saltando</p>";
-        
+
     }
-    
+
     //polimorfismo de sobrecarga
-    //PHP não tem suporte a polimorfísmo de sobrecarga.
-    public function reagirFrase($frase){
+    //PHP não tem suporte a polimorfismo de sobrecarga.
+    public function reagirFrase(string $frase): void {
         if($frase == "coma"){
             echo "<p>Abrindo a boca</p>";
         }
-        else { 
+        else {
             echo "<p>Fugindo</p>";
-            
+
         }
-            
+
     }
-    public function reagirDono($dono){
+    public function reagirDono(bool $dono): void {
         if($dono){
             echo "<p>Abraçando</p>";
         }
         else{
             echo "<p>dando soco</p>";
         }
- 
+
     }
-    public function reagirIdade($idade){
+    public function reagirIdade(int $idade): void {
         if($idade<2){
             echo "<p>Pedindo carinho</p>";
         }

@@ -2,9 +2,9 @@
 require_once './Controlador.php';   //importando a interface
 class ControleRemoto implements Controlador{
     //atributos
-    private $volume;
-    private $ligado;
-    private $tocando;
+    private int $volume;
+    private bool $ligado;
+    private bool $tocando;
 
     //métodos especiais
     public function __construct() { //construtos
@@ -12,75 +12,75 @@ class ControleRemoto implements Controlador{
         $this->ligado = false;
         $this->tocando = false;
     }
-    
-    private function getVolume() {
+
+    private function getVolume(): int {
         return $this->volume;
     }
-    private function getLigado() {
+    private function getLigado(): bool {
         return $this->ligado;
     }
-    private function getTocando() {
+    private function getTocando(): bool {
         return $this->tocando;
     }
-    private function setVolume($volume): void {
+    private function setVolume(int $volume): void {
         $this->volume = $volume;
     }
-    private function setLigado($ligado): void {
+    private function setLigado(bool $ligado): void {
         $this->ligado = $ligado;
     }
-    private function setTocando($tocando): void {
+    private function setTocando(bool $tocando): void {
         $this->tocando = $tocando;
     }
 
-    //métodos abstratos sobrescritos    
-    public function ligar() {
+    //métodos abstratos sobrescritos
+    public function ligar(): void {
         $this->setLigado(true);
     }
-    public function desligar() {
+    public function desligar(): void {
         $this->setLigado(false);
     }
-    public function abrirMenu() {
+    public function abrirMenu(): void {
         echo "<p>-------Menu-------</p>";
         echo "Está ligado: " . ($this->getLigado()?"Sim":"Não") . "<br>";
         echo "Está tocando: " . ($this->getTocando()?"Sim":"Não") . "<br>";
         echo "Volume: " . $this->getVolume() . "<br>";
     }
-    public function fecharMenu() {
+    public function fecharMenu(): void {
         echo "Fechando menu...";
     }
-    public function ligarMudo() {
+    public function ligarMudo(): void {
         if($this->getVolume()>0 && $this->getLigado()){
             $this->setVolume(0);
         }
     }
-    public function desligarMudo() {
+    public function desligarMudo(): void {
         if($this->getVolume()==0 && $this->getLigado()){
             $this->setVolume(20);
         }
-    } 
-    public function maisVolume() {
+    }
+    public function maisVolume(): void {
         if($this->getVolume()<=95 && $this->getLigado()){
             $this->setVolume($this->getVolume()+5);
         }
     }
-    public function menosVolume() {
+    public function menosVolume(): void {
         if($this->getVolume()>=5 && $this->getLigado()){
             $this->setVolume($this->getVolume()-5);
         }
-    }  
-    public function play() {
+    }
+    public function play(): void {
         if($this->getLigado() && !$this->getTocando()){
             $this->setTocando(true);
         }
     }
-    public function pause() {
+    public function pause(): void {
         if($this->getLigado() && $this->getTocando()){
             $this->setTocando(false);
         }
-        
+
     }
 
-    
+
 
 
 }

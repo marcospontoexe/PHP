@@ -4,31 +4,31 @@ require_once './Video.php';
 require_once './User.php';
 class Visualizacao {
     //atributos
-    private $espectador;
-    private $filme;
-    
+    private User $espectador;
+    private Video $filme;
+
     //construtor
-    public function __construct($espectador, $filme) {
+    public function __construct(User $espectador, Video $filme) {
         $this->espectador = $espectador;
         $this->filme = $filme;
-        $this->filme->setViews($this->filme->getViews()+1);   
-        $this->espectador->setTotAssistido($this->espectador->getTotAssistido()+1);
+        $this->filme->setViews($this->filme->getViews()+1);
+        $this->espectador->assistirMaisUm();
     }
-    
+
     //métodos especiais
-    public function getEspectador() {
+    public function getEspectador(): User {
         return $this->espectador;
     }
 
-    public function getFilme() {
+    public function getFilme(): Video {
         return $this->filme;
     }
 
-    public function setEspectador($espectador): void {
+    public function setEspectador(User $espectador): void {
         $this->espectador = $espectador;
     }
 
-    public function setFilme($filme): void {
+    public function setFilme(Video $filme): void {
         $this->filme = $filme;
     }
 

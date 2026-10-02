@@ -3,28 +3,28 @@
 require_once './Animal.php';
 class Mamifero extends Animal{
     //atributos
-    private $cor;
-    
-    //métodos sobrescritos da classe mãe  (polimorfismo de sobreposição)  
-    public function alimentar() {
+    private ?string $cor = null;
+
+    //métodos sobrescritos da classe mãe  (polimorfismo de sobreposição)
+    public function alimentar(): void {
         echo "<p>Mamando</p>";
-        
+
     }
-    public function emitirSom() {
+    public function emitirSom(): void {
         echo "<p>Som de mamífero</p>";
-        
+
     }
-    public function locomover() {
+    public function locomover(): void {
         echo "<p>Correndo</p>";
-        
+
     }
-    
+
     //métodos especiais
-    public function getCor() {
+    public function getCor(): ?string {
         return $this->cor;
     }
 
-    public function setCor($cor): void {
+    public function setCor(string $cor): void {
         $this->cor = $cor;
     }
 

@@ -1,16 +1,16 @@
 <?php
 //código da interface
-  
+
 interface Controlador {
     //métodos abstratos
-    public function ligar();
-    public function desligar();
-    public function abrirMenu();
-    public function fecharMenu();
-    public function maisVolume();
-    public function menosVolume();
-    public function ligarMudo();
-    public function desligarMudo();
-    public function play();
-    public function pause();
+    public function ligar(): void;
+    public function desligar(): void;
+    public function abrirMenu(): void;
+    public function fecharMenu(): void;
+    public function maisVolume(): void;
+    public function menosVolume(): void;
+    public function ligarMudo(): void;
+    public function desligarMudo(): void;
+    public function play(): void;
+    public function pause(): void;
 }
