@@ -6,9 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Repositório de **estudos de PHP** (sem aplicação, sem dependências). Todo o conteúdo — código, comentários, nomes de classes/variáveis e documentação — está em **português (pt-BR)**; mantenha esse idioma ao editar ou criar ficheiros.
 
-Há duas partes independentes:
+Partes do repositório:
 
 - [README.md](README.md) — apostila/tutorial em Markdown (HTTP/HTTPS, sintaxe, variáveis, escopo, operadores...). Cada tópico segue o padrão: explicação → bloco `php`/`html` de exemplo (seções "PRÁTICA") → link para o manual pt_BR em php.net. As imagens estão em [Imagens/](Imagens/) mas são referenciadas por URL absoluta do GitHub (`https://github.com/marcospontoexe/PHP/blob/main/Imagens/N.jpg`), não por caminho relativo.
+- [index.php](index.php) — página inicial com links para todas as aulas (lista fixa em arrays `$fundamentos` e `$poo`; atualize-a ao criar ou renomear uma aula).
 - [curso em vídeo/](curso%20em%20vídeo/) — exercícios de três cursos do Curso em Vídeo (PHP Moderno, PHP para Iniciantes e POO PHP, links no README), um diretório numerado por aula (`01-echo` … `15-objetos`). Cada aula é autocontida. `01`–`14` são fundamentos; `15-objetos` é o curso de POO.
 
 O README também é a vitrine do repositório: o utilizador pretende incluir estes projetos num portfólio. A seção "Projetos desenvolvidos" do README descreve cada aula/projeto — mantenha-a atualizada quando uma aula for adicionada ou alterada.
@@ -18,8 +19,8 @@ O README também é a vitrine do repositório: o utilizador pretende incluir est
 Não há build, composer, testes nem linter. Os scripts são páginas HTML com blocos `<?php ?>` embutidos, pensadas para abrir no navegador via servidor PHP:
 
 ```powershell
-# servir uma aula: iniciar o servidor DENTRO da pasta (cwd), não só com -t
-Set-Location "curso em vídeo\15-objetos\03-herança"; php -S localhost:8000
+# servir tudo a partir da raiz: o index.php da raiz lista todas as aulas com links
+php -S localhost:8000
 # verificação de sintaxe de um ficheiro
 php -l "curso em vídeo\12-string\string.php"
 ```
@@ -43,9 +44,9 @@ Cada subpasta (`01-Classes`, `02-encapsulamento/01-interface`, `02-encapsulament
 - um `index.php` como ponto de entrada, que carrega as classes e mostra os objetos com `print_r`/`var_dump` dentro de `<pre>`;
 - cada ficheiro de classe faz `require_once` da sua superclasse/interface (ex.: `Bolsista` → `Aluno` → `Pessoa`), formando a cadeia de dependências. Sem namespaces nem autoload.
 
-Os `require_once` misturam `'Classe.php'` e `'./Classe.php'`; a forma com `./` resolve pelo diretório de trabalho, não pelo diretório do script — por isso execute cada exemplo com a própria pasta como docroot/cwd.
+Os `require_once` misturam `'Classe.php'` e `'./Classe.php'`. A forma com `./` resolve pelo diretório de trabalho: funciona com `php -S` (que muda o cwd para a pasta do script) e com Apache, mas não com `php index.php` executado de outra pasta.
 
-Convenções seguidas nas classes: atributos `private`/`protected`, construtor `__construct`, getters/setters gerados pelo NetBeans (setters com retorno `: void`), comentários didáticos explicando o conceito (ex.: "método final, não pode ser sobreposto"). Os conceitos de cada pasta: herança com classe `abstract` e métodos `final`, interfaces implementadas (`Controlador`, `AcoesVideo`), objetos compostos (`Luta` usa `Lutador`) e agregação (`Visualizacao` agrega `User` e `Video`).
+Convenções seguidas nas classes: atributos `private`/`protected` **tipados** (`?tipo = null` para os que só são preenchidos por setters), construtor `__construct`, getters/setters com tipos de parâmetro e retorno, comentários didáticos explicando o conceito (ex.: "método final, não pode ser sobreposto"). Os conceitos de cada pasta: herança com classe `abstract` e métodos `final`, interfaces implementadas (`Controlador`, `AcoesVideo`), objetos compostos (`Luta` usa `Lutador`) e agregação (`Visualizacao` agrega `User` e `Video`).
 
 ## Cuidados
 

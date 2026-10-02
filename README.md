@@ -36,14 +36,14 @@ Cada aula é uma página HTML com código PHP embutido.
 | [05-formularios](curso%20em%20vídeo/05-formularios/) | Formulário HTML enviado por GET: o PHP calcula a idade a partir do ano de nascimento e aplica ao CSS o tamanho e a cor de fonte escolhidos, usando `isset` e ternário para os valores padrão. Os dados digitados passam por `htmlspecialchars` (proteção contra XSS), e a cor e a fonte são validadas antes de entrar no CSS |
 | [06-if](curso%20em%20vídeo/06-if/if.php) · [07-switch](curso%20em%20vídeo/07-switch/switch.php) | Estruturas condicionais: classificação por faixa etária com `if/elseif/else` e com `switch (true)` |
 | [08-while](curso%20em%20vídeo/08-while/while.php) · [09-doWhile](curso%20em%20vídeo/09-doWhile/doWhile.php) · [10-for](curso%20em%20vídeo/10-for/for.php) | Estruturas de repetição: contagem de 1 a 10 com `while`, `do-while` e `for` |
-| [11-funcoes](curso%20em%20vídeo/11-funcoes/funcao.php) | Funções com parâmetros e retorno, número variável de argumentos (`func_get_args`, `func_num_args`) e inclusão de arquivos externos (`include`, `require` e as variantes `_once`) |
+| [11-funcoes](curso%20em%20vídeo/11-funcoes/funcao.php) | Funções com parâmetros e retorno, número variável de argumentos com parâmetro variádico (`...$numeros`) e inclusão de arquivos externos (`include`, `require` e as variantes `_once`) |
 | [12-string](curso%20em%20vídeo/12-string/string.php) | Mais de 20 funções de manipulação de strings: `printf`, `wordwrap`, `strlen`, `str_word_count`, `explode`/`implode`, `strpos`, `substr`, `str_pad`, `str_replace`, `ucwords` e outras |
 | [13-vetores](curso%20em%20vídeo/13-vetores/vetor.php) | Arrays: inclusão e remoção de elementos (`array_push`, `array_pop`, `array_unshift`, `array_shift`, `unset`), `range`, chaves personalizadas e associativas, `foreach`, `count` e ordenação (`sort`, `rsort`, `asort`) |
 | [14-matriz](curso%20em%20vídeo/14-matriz/matriz.php) | Arrays multidimensionais (matrizes): criação, leitura e alteração de elementos |
 
 ### Programação orientada a objetos
 
-Cada projeto tem um arquivo por classe e um `index.php` que cria os objetos e mostra o estado deles com `print_r`.
+Cada projeto tem um arquivo por classe e um `index.php` que cria os objetos e mostra o estado deles com `print_r`. As classes declaram os tipos de atributos, parâmetros e retornos (`private ?string $modelo`, `function ligar(): void`).
 
 #### Classes e objetos — Caneta
 
@@ -83,19 +83,19 @@ Simulador de lutas. O `Lutador` define a própria categoria (leve, médio ou pes
 
 [15-objetos/05-agregação entre classes](curso%20em%20vídeo/15-objetos/05-agregação%20entre%20classes/)
 
-`Video` implementa a interface `AcoesVideo` (play, pause e like). `User` herda da classe abstrata `Pessoa` e chama o construtor da classe mãe com `parent::__construct()`. `Visualizacao` agrega um usuário e um vídeo: ao ser criada, soma uma visualização ao vídeo e um vídeo assistido ao usuário.
+`Video` implementa a interface `AcoesVideo` (play, pause e like). `User` herda da classe abstrata `Pessoa` e chama o construtor da classe mãe com `parent::__construct()`. `Visualizacao` agrega um usuário e um vídeo: ao ser criada, soma uma visualização ao vídeo e um vídeo assistido ao usuário, que ganha 1 ponto de experiência.
 
 ## Como executar
 
-É preciso ter o PHP 7.1 ou superior (todas as aulas foram testadas no PHP 8.5), usando o servidor embutido do PHP ou um pacote como XAMPP ou WampServer. Com o servidor embutido, inicie-o **dentro da pasta da aula**, porque os projetos de POO carregam as classes com `require_once './Classe.php'`, um caminho que depende do diretório de trabalho:
+É preciso ter o PHP 7.4 ou superior (todas as aulas foram testadas no PHP 8.5), usando o servidor embutido do PHP ou um pacote como XAMPP ou WampServer. Com o servidor embutido:
 
 ```bash
 git clone https://github.com/marcospontoexe/PHP.git
-cd "PHP/curso em vídeo/15-objetos/03-herança"
+cd PHP
 php -S localhost:8000
 ```
 
-Depois abra `http://localhost:8000/index.php` no navegador, ou o nome do arquivo da aula (ex.: `ola.php`, `string.php`). Na aula `05-formularios`, comece pelo `index.html`.
+Depois abra `http://localhost:8000` no navegador. O [index.php](index.php) da raiz lista todas as aulas com links.
 
 Projeto distribuído sob a licença MIT. Veja [LICENSE](LICENSE).
 

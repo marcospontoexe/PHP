@@ -17,9 +17,12 @@
   - `Luta`: 6 combinações de lutadores;
   - `Caneta`: o construtor preenche os atributos;
   - formulário: `<script>` e `"><img>` saem escapados, e cor ou fonte inválidas caem no padrão.
-- ⏳ **Pendentes:**
-  - o resto da seção 4: `</br>`, o `externa.php` com HTML completo, os `label for` errados, o `<title>` vazio e "1 empates";
-  - as seções 5, 6 e 7.
+- ✅ **Segunda rodada, também verificada:** o resto da seção 4, a seção 5 e a seção 7 (ver a tabela "Segunda rodada" abaixo). O lint passa nos 39 arquivos PHP, e os 20 links do novo `index.php` da raiz respondem HTTP 200 sem avisos. Testes específicos:
+  - plural no `Lutador`;
+  - `TypeError` ao passar um tipo errado;
+  - experiência na agregação;
+  - limites do ano de nascimento (1899, 1900, ano atual e 3000).
+- ⏳ **Pendente:** a seção 6 (`nbproject/private/`, `.idea/`, `main.py` e `.gitignore`).
 - As linhas citadas nas tabelas abaixo são as da versão **anterior** às correções.
 
 Como cada item foi corrigido:
@@ -33,6 +36,14 @@ Como cada item foi corrigido:
 | 6 | `input.php`: `?? null` e `is_numeric()`. Sem números válidos, mostra uma instrução de uso |
 | 7 | `operadores.php`: `pow($n1, 2)`, e `sqrt`, `round` e `intval` passam a usar `$n2 = 10.75` |
 | 9 | `formulario.php`: fonte validada contra a lista do `<select>` e cor com `/^#[0-9a-f]{6}$/i`. O padrão passa a ser `#000000` |
+
+Segunda rodada:
+
+| Seção | Correção aplicada |
+|---|---|
+| 4 | Todos os `</br>` trocados por `<br>`. `externa.php` ficou só com a função. `label for="inasce"` corrigido, "Sexo:" passou a `<span>` e o campo do ano ganhou `min="1900"`. O PHP aceita anos de 1900 até o ano atual. Os `index.php` de POO têm `<title>` e `<h1>`. Plural automático no `Lutador` ("1 empate", "2 empates") |
+| 5 | Removido `Luta::$rounds`. `assitirMaisUm()` passou a `assistirMaisUm()`, é usado por `Visualizacao` e dá 1 ponto de experiência. Corrigido o comentário de `Pessoa` (agregação). `fazerAniversario()` é demonstrado no `index.php` da herança. Em `variaveis.php`, o exemplo de referência foi corrigido e `$casado`/`$peso` são exibidos com `gettype()` |
+| 7 | Tipos de atributos, parâmetros e retornos em todas as classes de POO. `...$numeros` em `funcao.php`. `index.php` na raiz com links para todas as aulas. O `index.php` da agregação demonstra `play()` e `like()`. O README passa a pedir PHP 7.4+ (por causa dos atributos tipados) |
 
 ## 1. Erros de lógica (confirmados)
 
