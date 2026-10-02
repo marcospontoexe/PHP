@@ -2,6 +2,8 @@
 
 Meus estudos de PHP: exercícios e projetos desenvolvidos nos cursos de PHP do [Curso em Vídeo](https://www.cursoemvideo.com/), com o professor Gustavo Guanabara, e anotações teóricas sobre a linguagem.
 
+**Ver online:** [marcospontoexe.github.io/PHP](https://marcospontoexe.github.io/PHP/) (versão estática de todas as aulas, com link para o código de cada uma).
+
 ## Sumário
 
 - [Cursos](#cursos)
@@ -96,6 +98,8 @@ php -S localhost:8000
 ```
 
 Depois abra `http://localhost:8000` no navegador. O [index.php](index.php) da raiz lista todas as aulas com links.
+
+A versão online é publicada no GitHub Pages pelo workflow [pages.yml](.github/workflows/pages.yml) a cada push no `main`. Como o GitHub Pages não executa PHP, o script [gerar-site.php](scripts/gerar-site.php) roda as aulas no servidor embutido e publica o HTML resultante. Por isso, lá o formulário e o `input.php` mostram um resultado de exemplo, e a luta do Ultra Emoji Combat mostra o resultado sorteado na publicação.
 
 Projeto distribuído sob a licença MIT. Veja [LICENSE](LICENSE).
 
