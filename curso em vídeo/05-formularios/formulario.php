@@ -31,12 +31,13 @@
         $nasc = isset($_GET["nasce"]) ? ($_GET["nasce"]) : "Valor não informado";        // recebe o valor enviado pelo método 'GET'
         $s = isset($_GET["sexo"]) ? htmlspecialchars($_GET["sexo"]) : "Valor não informado";
 
-        if (is_numeric($nasc)) {       // só calcula a idade se o ano for um número
+        // só calcula a idade se o ano for um número entre 1900 e o ano atual
+        if (is_numeric($nasc) && $nasc >= 1900 && $nasc <= date("Y")) {
             $idade = date("Y") - $nasc;
             echo "$n tem $idade anos! <br>";
         } else {
             echo "Nome: $n <br>";
-            echo "Ano de nascimento não informado! <br>";
+            echo "Ano de nascimento não informado ou inválido! <br>";
         }
         echo "sexo: $s! <br>";
     ?>

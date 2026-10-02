@@ -15,23 +15,25 @@
         $peso = (int)60;        /* força a variável a ser do tipo int*/
         $vetor = array(2, 5, 9, 8);     //cria um vetor
 
-        echo "Vetor posição 0: $vetor[0] </br>";
-        echo "$nome"." tem "."$idade"." anos!</br>";            /* concatenando strings */
-        echo "$nome ganha $salario reais e tem $idade anos!</br>";
+        echo "Vetor posição 0: $vetor[0] <br>";
+        echo "$nome"." tem "."$idade"." anos!<br>";            /* concatenando strings */
+        echo "$nome ganha $salario reais e tem $idade anos!<br>";
+        echo "Casado: " . ($casado ? "sim" : "não") . " (tipo " . gettype($casado) . ")<br>";
+        echo "Peso: $peso kg (tipo " . gettype($peso) . ")<br>";
 
         //VARIÁVEIS REFERENCIADAS
-        $n1 = 2;
-        $n1 = &$n2;       // n1 é referencia de n2
-        $n2 = 10;
+        $n2 = 2;
+        $n1 = &$n2;       // n1 é referencia de n2: as duas variáveis apontam para o mesmo valor
+        $n2 = 10;         // alterar n2 também altera n1
 
-        echo "n1 vale $n1 </br>";
-        echo "n2 vale $n2 </br>";
+        echo "n1 vale $n1 <br>";
+        echo "n2 vale $n2 <br>";
 
         //VARIÁVEIS DE VARIÁVEIS
         $valor = "string";
         $$valor = "marcos";       // cria uma variável chamada 'string' que recebe o valor "marcos"
 
-        echo "valor : $valor </br>";
+        echo "valor : $valor <br>";
         echo "string : $string";
 ?>
     

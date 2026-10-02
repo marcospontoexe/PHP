@@ -11,7 +11,7 @@
         $valor = 1;
 
         do{
-            echo "$valor </br>";
+            echo "$valor <br>";
             $valor++;
         }
         while($valor <= 10);
