@@ -2,23 +2,26 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Agregação entre classes - Plataforma de vídeos</title>
     </head>
-    <body>        
+    <body>
+        <h1>Agregação entre classes - Plataforma de vídeos</h1>
         <pre>
             <?php
                 require_once './Video.php';
                 require_once './User.php';
                 require_once './Visualizacao.php';
-                
+
                 $v[0] = new Video("Aula 02 de Java");
-                $v[1] = new Video("Aula 09 de PHP");                
+                $v[1] = new Video("Aula 09 de PHP");
                 print_r($v);
-                
-                $u[0] = new User("Jurandir", 59, "M", 12345);
+
+                $u[0] = new User("Jurandir", 59, "M", "jurandir");
                 print_r($u);
-                
+
                 $vis[0] = new Visualizacao($u[0], $v[1]); //agregação da classe User ao Video
+                $v[1]->play();      //métodos da interface AcoesVideo
+                $v[1]->like();
                 print_r($vis);
             ?>
         </pre>

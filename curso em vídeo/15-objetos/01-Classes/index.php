@@ -6,6 +6,7 @@
         <title>Criando Classes</title>
     </head>
     <body>
+        <h1>Classes e objetos - Caneta</h1>
         <pre>
             <?php
                 require_once 'Caneta.php';  //importando a classe caneta

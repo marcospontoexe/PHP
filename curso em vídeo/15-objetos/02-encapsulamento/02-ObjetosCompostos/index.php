@@ -3,9 +3,10 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Ultra Emoji Combat - Objetos compostos</title>
     </head>
     <body>
+        <h1>Ultra Emoji Combat</h1>
         <?php
             require_once 'Lutador.php';
             require_once 'Luta.php';

@@ -2,54 +2,54 @@
 //classe abstrata (classe raiz)
 abstract class Pessoa {
     //atributos
-    protected $nome;
-    protected $idade;
-    protected $sexo;
-    protected $experiencia;
-    
+    protected string $nome;
+    protected int $idade;
+    protected string $sexo;
+    protected int $experiencia;
+
     //construtor
-    public function __construct($nome, $idade, $sexo) {
+    public function __construct(string $nome, int $idade, string $sexo) {
         $this->nome = $nome;
         $this->idade = $idade;
         $this->sexo = $sexo;
         $this->experiencia=0;
     }
-    
-    //métodos abstrato
-    public function ganharExperiencia($n){
+
+    //métodos
+    public function ganharExperiencia(int $n): void {
         $this->experiencia += $n;
     }
-    
+
     //métodos especiais
-    public function getNome() {
+    public function getNome(): string {
         return $this->nome;
     }
 
-    public function getIdade() {
+    public function getIdade(): int {
         return $this->idade;
     }
 
-    public function getSexo() {
+    public function getSexo(): string {
         return $this->sexo;
     }
 
-    public function getExperiencia() {
+    public function getExperiencia(): int {
         return $this->experiencia;
     }
 
-    public function setNome($nome): void {
+    public function setNome(string $nome): void {
         $this->nome = $nome;
     }
 
-    public function setIdade($idade): void {
+    public function setIdade(int $idade): void {
         $this->idade = $idade;
     }
 
-    public function setSexo($sexo): void {
+    public function setSexo(string $sexo): void {
         $this->sexo = $sexo;
     }
 
-    public function setExperiencia($experiencia): void {
+    public function setExperiencia(int $experiencia): void {
         $this->experiencia = $experiencia;
     }
 

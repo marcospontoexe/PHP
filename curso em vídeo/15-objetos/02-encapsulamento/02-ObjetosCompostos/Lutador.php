@@ -2,50 +2,57 @@
 
 class Lutador {
     //atributos
-    private $nome;
-    private $nacionalidade;
-    private $idade;
-    private $altura;
-    private $peso;
-    private $categoria;
-    private $vitorias;
-    private $derrotas;
-    private $empates;
-    
-    
+    private string $nome;
+    private string $nacionalidade;
+    private int $idade;
+    private float $altura;
+    private float $peso;
+    private string $categoria;
+    private int $vitorias;
+    private int $derrotas;
+    private int $empates;
+
+
     //metodos
-    public function apresentar(){
+    public function apresentar(): void {
         echo "-----------APRESENTANDO------------------<br>";
-        echo "Chegou a hora!<br>";        
+        echo "Chegou a hora!<br>";
         echo "Nacionalidade: " . $this->getNacionalidade() . "<br>";
         echo "Com " . $this->getIdade() . " anos, pesando " . $this->getPeso() . " quilos";
-        echo "<br>com " .$this->getVitorias() . " vitórias, " . $this->getDerrotas() . " derrotas e " . $this->getEmpates() . " empates...";
+        echo "<br>com " . $this->plural($this->getVitorias(), "vitória", "vitórias") . ", "
+            . $this->plural($this->getDerrotas(), "derrota", "derrotas") . " e "
+            . $this->plural($this->getEmpates(), "empate", "empates") . "...";
         echo "<br>O lutador " . $this->getNome() . "<br>";
         echo "<p></p>";
-        
+
     }
-    public function status(){
+    public function status(): void {
         echo "-----------STATUS------------------<br>";
         echo $this->getNome() . " da categoria " . $this->getCategoria()."<br>";
-        echo "já ganhou " . $this->getVitorias() . " lutas<br>";
-        echo "perdeu " . $this->getDerrotas() . " lutas<br>";
-        echo " e empatou " . $this->getEmpates() . " vezes.<br>";
+        echo "já ganhou " . $this->plural($this->getVitorias(), "luta", "lutas") . "<br>";
+        echo "perdeu " . $this->plural($this->getDerrotas(), "luta", "lutas") . "<br>";
+        echo " e empatou " . $this->plural($this->getEmpates(), "vez", "vezes") . ".<br>";
         echo "<p></p>";
-        
+
     }
-    public function ganharLuta(){
+    public function ganharLuta(): void {
         $this->setVitorias($this->getVitorias()+1);
-        
+
     }
-    public function perderLuta(){
+    public function perderLuta(): void {
         $this->setDerrotas($this->getDerrotas()+1);
     }
-    public function empatarLuta(){
+    public function empatarLuta(): void {
         $this->setEmpates($this->getEmpates()+1);
     }
-    
+
+    //escreve a quantidade com a palavra no singular ou no plural (ex.: "1 empate", "2 empates")
+    private function plural(int $quantidade, string $singular, string $plural): string {
+        return $quantidade . " " . ($quantidade == 1 ? $singular : $plural);
+    }
+
     //métodos especiais
-    public function __construct($nome, $nacionalidade, $idade, $altura, $peso, $vitorias, $derrotas, $empates) {
+    public function __construct(string $nome, string $nacionalidade, int $idade, float $altura, float $peso, int $vitorias, int $derrotas, int $empates) {
         $this->nome = $nome;
         $this->nacionalidade = $nacionalidade;
         $this->idade = $idade;
@@ -56,59 +63,59 @@ class Lutador {
         $this->setPeso($peso);
     }
     //métodos acessores e modificadores
-    public function getNome() {
+    public function getNome(): string {
         return $this->nome;
     }
 
-    public function getNacionalidade() {
+    public function getNacionalidade(): string {
         return $this->nacionalidade;
     }
 
-    public function getIdade() {
+    public function getIdade(): int {
         return $this->idade;
     }
 
-    public function getAltura() {
+    public function getAltura(): float {
         return $this->altura;
     }
 
-    public function getPeso() {
+    public function getPeso(): float {
         return $this->peso;
     }
 
-    public function getCategoria() {
+    public function getCategoria(): string {
         return $this->categoria;
     }
 
-    public function getVitorias() {
+    public function getVitorias(): int {
         return $this->vitorias;
     }
 
-    public function getDerrotas() {
+    public function getDerrotas(): int {
         return $this->derrotas;
     }
 
-    public function getEmpates() {
+    public function getEmpates(): int {
         return $this->empates;
     }
 
-    public function setNome($nome): void {
+    public function setNome(string $nome): void {
         $this->nome = $nome;
     }
 
-    public function setNacionalidade($nacionalidade): void {
+    public function setNacionalidade(string $nacionalidade): void {
         $this->nacionalidade = $nacionalidade;
     }
 
-    public function setIdade($idade): void {
+    public function setIdade(int $idade): void {
         $this->idade = $idade;
     }
 
-    public function setAltura($altura): void {
+    public function setAltura(float $altura): void {
         $this->altura = $altura;
     }
 
-    public function setPeso($peso): void {
+    public function setPeso(float $peso): void {
         $this->peso = $peso;
         $this->setCategoria();
     }
@@ -126,7 +133,7 @@ class Lutador {
         elseif ($this->peso <= 120.2) {
             $this->categoria = "Peso pesado";
         }
-        else{          
+        else{
             $this->categoria = "Categoria inválida, peso acima do limite";
         }
     }
@@ -136,15 +143,15 @@ class Lutador {
         return in_array($this->categoria, ["Peso leve", "Peso médio", "Peso pesado"], true);
     }
 
-    public function setVitorias($vitorias): void {
+    public function setVitorias(int $vitorias): void {
         $this->vitorias = $vitorias;
     }
 
-    public function setDerrotas($derrotas): void {
+    public function setDerrotas(int $derrotas): void {
         $this->derrotas = $derrotas;
     }
 
-    public function setEmpates($empates): void {
+    public function setEmpates(int $empates): void {
         $this->empates = $empates;
     }
 }

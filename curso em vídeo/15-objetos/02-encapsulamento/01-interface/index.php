@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Controle remoto - Interface</title>
     </head>
     <body>
         <h1>Projeto controle remoto</h1>    
