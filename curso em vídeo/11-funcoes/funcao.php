@@ -23,21 +23,21 @@
 
         $v1 = 5;
         $v2 = 3;
-        echo "</br>";
+        echo "<br>";
         echo "A multiplicação entre $v1 e $v2 é: ". multiplo($v1, $v2);
 
         /*--------------ROTINA COM MULTIPLOS PARÂMETROS------------------*/
-        function total(){   /* parâmetros de entrada indeterminado */
-            $vet = func_get_args();     /* cria um vetor com os parâmetros passados para a função */
-            $tot = func_num_args();     /* recebe a quantidade de parâmetros passados para a função */
+        function total(...$numeros){   /* parâmetros de entrada indeterminado: ...$numeros (parâmetro variádico) recebe todos os argumentos em um vetor */
+            /* forma antiga, sem parâmetro variádico: func_get_args() cria um vetor com os parâmetros
+            e func_num_args() retorna a quantidade de parâmetros passados para a função */
             $s = 0;
-            for($i=0; $i<$tot; $i++){
-                $s +=$vet[$i];
+            foreach($numeros as $n){
+                $s += $n;
             }
             return $s;
         }
-        echo "</br>";
-        echo "A soma entre 2, 3, 8, 7 é :".total(2, 3, 8, 7). "</br>";
+        echo "<br>";
+        echo "A soma entre 2, 3, 8, 7 é: ".total(2, 3, 8, 7). "<br>";
 
         /*-------------------USANDO FUNÇÃO EXTERNA--------------------- */
         include "externa.php";     

@@ -27,10 +27,10 @@
             <label for="inome">Nome:</label>
             <input type="text" name="nome" id="inome" required>
             <br>
-            <label for="idade">Nascimento:</label>
-            <input type="number" name="nasce" id="inasce" required>
+            <label for="inasce">Ano de nascimento:</label>
+            <input type="number" name="nasce" id="inasce" min="1900" required>
             <br>
-            <label for="isexo">Sexo:</label>
+            <span>Sexo:</span>   <!-- não é <label>: o grupo de opções não tem um único campo associado -->
             <br>
             <input type="radio" name="sexo" id="masc" value="masculino" checked>
             <label for="masc">Masculino</label>

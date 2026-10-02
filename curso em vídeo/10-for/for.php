@@ -9,7 +9,7 @@
 <body>
     <?php   
         for($valor=1; $valor<=10; $valor++){
-            echo "$valor </br>";
+            echo "$valor <br>";
         }          
             
 
