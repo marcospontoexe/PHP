@@ -1,2 +1,7 @@
 # site estático gerado por scripts/gerar-site.php (publicado pelo GitHub Actions, não versionado)
 _site/
+
+# notas de trabalho locais (instruções do Claude Code, handoff entre sessões e relatórios internos)
+CLAUDE.md
+CONTEXTO.md
+DOCS/

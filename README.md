@@ -10,6 +10,7 @@ Meus estudos de PHP: exercícios e projetos desenvolvidos nos cursos de PHP do [
 - [Projetos desenvolvidos](#projetos-desenvolvidos)
   - [Fundamentos da linguagem](#fundamentos-da-linguagem)
   - [Programação orientada a objetos](#programação-orientada-a-objetos)
+- [Modernização para PHP 8](#modernização-para-php-8)
 - [Como executar](#como-executar)
 - Anotações de estudo: [O que é PHP](#o-que-é-php) · [Sintaxe básica](#sintaxe-básica) · [Variáveis](#variáveis) · [Operadores](#operadores)
 
@@ -86,6 +87,19 @@ Simulador de lutas. O `Lutador` define a própria categoria (leve, médio ou pes
 [15-objetos/05-agregação entre classes](curso%20em%20vídeo/15-objetos/05-agregação%20entre%20classes/)
 
 `Video` implementa a interface `AcoesVideo` (play, pause e like). `User` herda da classe abstrata `Pessoa` e chama o construtor da classe mãe com `parent::__construct()`. `Visualizacao` agrega um usuário e um vídeo: ao ser criada, soma uma visualização ao vídeo e um vídeo assistido ao usuário, que ganha 1 ponto de experiência.
+
+## Modernização para PHP 8
+
+Os exercícios foram escritos em 2022. Em 2026, todas as aulas foram executadas no PHP 8.5 e atualizadas:
+
+- **Compatibilidade com PHP 8:** o construtor no estilo PHP 4 (`function Caneta()`), que o PHP 8 deixou de chamar, passou a ser `__construct`. As páginas que davam erro fatal (`TypeError`) com dados ausentes ou não numéricos passaram a validar a entrada.
+- **Correções de lógica:**
+  - `switch (true)` no lugar de `switch ($idade)`, que mostrava a idade 0 como "Adulto!";
+  - na luta, lutadores fora dos limites de peso eram aprovados, e lutadores diferentes com os mesmos dados eram tratados como o mesmo (`!==` no lugar de `!=`).
+- **Segurança:** saída escapada com `htmlspecialchars()`, contra XSS, e cor e fonte do formulário validadas antes de entrarem no CSS.
+- **Código mais moderno:** tipos em atributos, parâmetros e retornos de todas as classes, parâmetro variádico (`...$numeros`) no lugar de `func_get_args()` e remoção de código sem uso.
+- **HTML válido:** `<br>` no lugar de `</br>`, labels do formulário ligadas aos campos e título em todas as páginas.
+- **Teste e publicação automáticos:** um workflow do GitHub Actions executa todas as aulas a cada pull request (e falha se alguma página mostrar erro ou aviso do PHP) e publica a versão estática no GitHub Pages.
 
 ## Como executar
 
